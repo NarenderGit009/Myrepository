@@ -1,7 +1,7 @@
 package com.dineshonjava.bean;
 
 /**
- * @author Dinesh Narender
+ * @author Dinesh Narender Reddy
  *
  */
 public class EmployeeBean {
