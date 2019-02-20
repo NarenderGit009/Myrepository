@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+   <!-- Product Sales Entry Views Start -->
+	
+        <definition name="reOpenProductSalesForm" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+     	<put-attribute name="body" value="/WEB-INF/views/product/sales/salesForms/salesOrderForm.jsp"></put-attribute>
+    </definition>
+	
+	<!-- Organization Views -->
+    
+  <definition name="openProductSalesFormByOrganization" extends="base.definition">
+        <put-attribute name="title" value="Product Sales Form"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/organization/activeOrganization/activeOrganizationMenu.jsp"></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/sales/salesForms/salesOrderForm.jsp"></put-attribute>
+    </definition>
+
+    
+    <definition name="reOpenProductSalesFormByOrganization" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/sales/salesForms/salesOrderForm.jsp"></put-attribute>
+    </definition>
+    
+
+    
+    <!-- End Organization Views -->
+    
+    <!-- Branch Views -->
+    
+     <definition name="openProductSalesFormByBranch" extends="base.definition">
+        <put-attribute name="title" value="Product Sales Form"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/branch/activeBranch/activeBranchMenu.jsp"></put-attribute>
+       	<put-attribute name="body" value="/WEB-INF/views/product/sales/salesForms/salesOrderForm.jsp"></put-attribute>
+    </definition>
+
+    
+    <definition name="reOpenProductSalesFormByBranch" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+     	<put-attribute name="body" value="/WEB-INF/views/product/sales/salesForms/salesOrderForm.jsp"></put-attribute>
+    </definition>
+
+    
+    <!-- End Branch Views -->
+    
+     <!-- Outlet Views -->
+     
+    <definition name="openProductSalesFormByOutlet" extends="base.definition">
+        <put-attribute name="title" value="Product Sales Form"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/outlet/activeOutlet/activeOutletMenu.jsp"></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/sales/salesForms/salesOrderForm.jsp"></put-attribute>
+    </definition>
+
+    
+    <definition name="reOpenProductSalesFormByOutlet" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/sales/salesForms/salesOrderForm.jsp"></put-attribute>
+    </definition>
+
+    
+    <!-- End Outlet Views -->
+	<!--End Product Sales Entry Views -->
+	
+	<!-- Sales Invoice Views -->
+     <definition name="sOInvoiceView" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/sales/invoice.jsp"></put-attribute>
+    </definition>
+    
+         <definition name="sROInvoiceView" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/sales/invoice.jsp"></put-attribute>
+    </definition>
+    
+	<!-- End Sales Invoice Views -->
+
+    
+     <!-- Sales Related Lists -->   
+   <definition name="salesOrderList" extends="base.definition">  
+   		<put-attribute name="title" value="Sales Orders List"></put-attribute>     
+       <put-attribute name="menu" value="/WEB-INF/views/user/menu.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/sales/list/salesOrderList.jsp"></put-attribute>
+    </definition>
+    <definition name="reOpenSalesOrderList" extends="ajax.defination">     		   
+       <put-attribute name="menu" value=""></put-attribute>
+   <put-attribute name="body" value="/WEB-INF/views/product/sales/list/salesOrderList.jsp"></put-attribute>
+    </definition>
+     <definition name="salesLineItemsList" extends="ajax.defination">     		
+       <put-attribute name="menu" value=""></put-attribute>
+      <put-attribute name="body" value="/WEB-INF/views/product/sales/list/salesOrderLineItemsList.jsp"></put-attribute>
+    </definition>
+    <!-- End Sales Related Lists -->
+    </tiles-definitions>

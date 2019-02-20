@@ -1,0 +1,496 @@
+
+
+	<!DOCTYPE html>
+	<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Insert title here</title>
+	<style type="text/css">
+	table {
+		border-spacing: 0px;
+		font-style: Calibri;
+		
+	}
+	td{
+	padding:0;
+		word-wrap: break-word;
+		
+	}
+	.inv_print {
+		width: 100%;
+		margin: auto;
+		font-size: 12px;
+		border: 0.5px solid #454545;
+	}
+
+	.inv_print table {
+		width: 100%;
+	}
+	.sup_details_1_1{
+		width: 70%;
+	}
+
+	.inv_print .inv_header td {
+		text-align: center;
+		vertical-align: middle;
+		font-size: 20px;
+		font-weight: bold;
+		padding-bottom: 10px;
+		padding-top: 10px;
+	}
+	.inv_print .sup_details{
+	line-height: 30px;
+	}
+
+	.inv_print .sup_details table table .lable {
+		width: 30%;
+		
+	}
+	 .lable {
+	 font-weight: bold;
+	 }
+	.inv_print .sup_details table table {
+		height: 100%;
+	}
+
+	.inv_print .rec_details table td {
+		width: 30%;
+	}
+
+	.inv_print .rec_details table table .lable {
+		width: 30%;
+	}
+
+	.inv_items_header table td,.inv_items_header table table td {
+		text-align: center;
+	}
+
+	.inv_items table td,.inv_items table table td {
+		text-align: center;
+	}
+
+	.inv_items table table {
+		border: none;
+	}
+
+	.hslno,.slno {
+		width: 5%;
+	}
+
+	.hdesc{
+		width: 35%
+
+	}
+	.desc {
+		width: 35%
+	}
+	.inv_items .desc, {
+		text-align: left;
+		padding-left: 5px;
+	}
+
+	.hsch,.hmrp,.hpr {
+		width: 7%
+
+	}
+	.sch,.mrp,.pr {
+		width: 7%
+	}
+	.hquta {
+		width: 17%;
+		 font-weight: bold;
+	}
+	.quta,.fquta{
+		
+		width: 7%
+	}
+	.amt,.ps{
+	width: 8%
+	}
+
+	.inv_items_header .lable{
+	 font-weight: bold;
+	 color: #346969;
+	}
+	/***********************************************************************/
+	.sup_details_1{
+	border-top: 0.5px solid #454545;
+	}
+	.sup_details_1_1{
+	border-right: 0.5px solid #454545;
+	}
+	.rec_details_1{
+	border-top: 0.5px solid #454545;
+	}
+	.rec_details_1_1{
+	border-right: 0.5px solid #454545;
+	}
+	.inv_items_header_1{
+	border-top: 0.5px solid #454545;
+
+	}
+	tr.inv_items_header_1_1 td {
+	border-bottom: 0.5px solid #454545;
+	}
+
+	.hsch,.hmrp,.hpr,.hquta,.hslno,.hdesc {
+		border-right: 0.5px solid #454545;
+		 color: #346969;
+	}
+	.sch,.mrp,.pr,.quta,.slno,.desc,.fquta {
+		border-right: 0.5px solid #454545;
+padding-top:3px;
+		padding-bottom:3px;
+	}
+	tr.hquta_1 td{
+	border-bottom: none;
+	}
+	tr.amnt_1 td{
+	border-bottom: none;
+	}
+	.inv_items_1{
+	border-top: 0.5px solid #454545;
+	}
+	/*.slno,.desc,.sch,.mrp,.quta_1,.quta_2,.pr,.pr_1{
+	border-right: 0.5px solid #454545;
+
+	}*/
+	.inv_cal_1{
+	border-top: 0.5px solid #454545;
+	}
+	.inv_cal_1_1{
+	border-right: 0.5px solid #454545;
+	}
+	.inv_cal_1_1_1{
+	border-top: 0.5px solid #454545;
+	border-right: 0.5px solid #454545;
+	}
+	.inv_cal_1_1_2{
+	border-top: 0.5px solid #454545;
+	}
+	.inv_tc_1{
+	border-top: 0.5px solid #454545;
+	}
+	.inv_tc_1_1{
+	border-right: 0.5px solid #454545;
+	}
+
+	tr.inv_items_footer_1 td{
+	border-top: 0.5px solid #454545;
+	}
+	/************************************************************/
+
+	.lable,.inv_tc_1_1,.inv_header{
+	 color: #346969;
+	 padding-top:3px;
+		padding-bottom:3px;
+		padding-left: 2px;
+	}
+	</style>
+	</head>
+	<body>
+		<table class="inv_print" style="border-spacing: 0px;">
+		<tr><div><input type="button"  onClick="window.print()" value="Print This Page"/></div></tr>
+			<tr class="inv_header">
+				<td>TAX INVOICE</td>
+			</tr>
+			<tr class="sup_details">
+				<td class="sup_details_1">
+					<table>
+						<tr>
+							<td class="sup_details_1_1">
+								<table class="">
+									<tr>
+										<td class="lable">SUPPLIER :</td>
+										<td>Rely Agencies</td>
+									</tr>
+									<tr>
+										<td class="lable">ADDRESS :</td>
+										<td>kphb ,9th phase, hyd</td>
+									</tr>
+								</table>
+							</td>
+							<td>
+								<table>
+									<tr>
+										<td class="lable">TIN NO :</td>
+										<td>XXXXXXXXXXXXXXXXX</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr class="rec_details">
+				<td  class="rec_details_1">
+					<table>
+						<tr>
+							<td   class="rec_details_1_1">
+								<table>
+									<tr>
+										<td class="lable">M/S:</td>
+									</tr>
+									<tr>
+										<td>HETERO MEDICALS, KPHB, HYD</td>
+									</tr>
+								</table>
+							</td>
+							<td  class="rec_details_1_1">
+								<table >
+									<tr>
+										<td class="lable">BILL NO:</td>
+										<td>PO2140324/2/2/1</td>
+									</tr>
+									<tr>
+										<td class="lable">DEALER CODE:</td>
+										<td>AG001</td>
+									</tr>
+									<tr>
+										<td class="lable">P.O NO:</td>
+										<td>PO2140324/2/2/1</td>
+									</tr>
+								</table>
+							</td>
+							<td>
+								<table>
+									<tr>
+										<td class="lable">DATE:</td>
+										<td>2014-03-26</td>
+									</tr>
+									<tr>
+										<td class="lable">CHECKED BY:</td>
+										<td>XXXXXXX</td>
+									</tr>
+									<tr>
+										<td class="lable">TRANSPORT:</td>
+										<td>XXXXXXXX</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr class="inv_items_header">
+				<td class="inv_items_header_1">
+					<table>
+						<tr class="inv_items_header_1_1">
+							<td class="hslno"><b>SL NO</b></td>
+							<td class="hdesc"><b>DESCRIPTION</b></td>
+							<td class="hsch"><b>SCHEME</b></td>
+							<td class="hmrp"><b>MRP</b></td>
+							<td colspan="2" class="hquta">
+								<table>
+									<tr>
+										<td colspan="2"  class="lable">QUANTITY</td>
+									</tr>
+									<tr class="hquta_1">
+										<td class="lable">SALE</td>
+										<td class="lable">FREE</td>
+									</tr>
+								</table>
+							</td>
+							<td class="hpr"><b>PRICE</b></td>
+							<td colspan="2">
+								<table>
+									<tr>
+										<td colspan="2"  class="lable">AMOUNT</td>
+									</tr>
+									<tr class="amnt_1">
+										<td class="lable">RS.</td>
+										<td class="lable">PS.</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					
+	<!---->
+					
+						<tr>
+							<td class="slno">1</td>
+							<td class="desc">DOLO</td>
+							<td class="sch">%</td>
+							<td class="mrp">100</td>
+							<td class="quta">100</td>
+							<td class="fquta">5</td>
+							<td class="pr">10</td>
+							<td class="amt">100</td>
+							<td class="ps">00</td>
+							
+						</tr>
+						<tr>
+							<td class="slno">2</td>
+							<td class="desc">BREAD</td>
+							<td class="sch">%</td>
+							<td class="mrp">100</td>
+							<td class="quta">100</td>
+							<td class="fquta">5</td>
+							<td class="pr">10</td>
+							<td class="">100</td>
+							<td class="">00</td>
+							
+						</tr>
+						<tr>
+							<td class="slno">3</td>
+							<td class="desc">PARACITAMAL</td>
+							<td class="sch">%</td>
+							<td class="mrp">100</td>
+							<td class="quta">100</td>
+							<td class="fquta">5</td>
+							<td class="pr">10</td>
+							<td class="">100</td>
+							<td class="">00</td>
+							
+						</tr>
+						<tr>
+							<td class="slno">4</td>
+							<td class="desc">BOOST</td>
+							<td class="sch">%</td>
+							<td class="mrp">100</td>
+							<td class="quta">100</td>
+							<td class="fquta">5</td>
+							<td class="pr">10</td>
+							<td class="">100</td>
+							<td class="">00</td>
+						</tr>
+						<tr>
+							<td class="slno">4</td>
+							<td class="desc">BOOST</td>
+							<td class="sch">%</td>
+							<td class="mrp">100</td>
+							<td class="quta">100</td>
+							<td class="fquta">5</td>
+							<td class="pr">10</td>
+							<td class="">100</td>
+							<td class="">00</td>
+						</tr>
+						<tr>
+							<td class="slno">4</td>
+							<td class="desc">BOOST</td>
+							<td class="sch">%</td>
+							<td class="mrp">100</td>
+							<td class="quta">100</td>
+							<td class="fquta">5</td>
+							<td class="pr">10</td>
+							<td class="">100</td>
+							<td class="">00</td>
+						</tr>
+						<tr>
+							<td class="slno">4</td>
+							<td class="desc">BOOST</td>
+							<td class="sch">%</td>
+							<td class="mrp">100</td>
+							<td class="quta">100</td>
+							<td class="fquta">5</td>
+							<td class="pr">10</td>
+							<td class="">100</td>
+							<td class="">00</td>
+						</tr>
+						<tr>
+							<td class="slno">4</td>
+							<td class="desc">BOOST</td>
+							<td class="sch">%</td>
+							<td class="mrp">100</td>
+							<td class="quta">100</td>
+							<td class="fquta">5</td>
+							<td class="pr">10</td>
+							<td class="">100</td>
+							<td class="">00</td>
+						</tr>
+						<tr>
+							<td class="slno">4</td>
+							<td class="desc">BOOST</td>
+							<td class="sch">%</td>
+							<td class="mrp">100</td>
+							<td class="quta">100</td>
+							<td class="fquta">5</td>
+							<td class="pr">10</td>
+							<td class="">100</td>
+							<td class="">00</td>
+						</tr>
+		<style>
+		.tot_qua{
+		border-right: 0.5px solid #454545;
+		}
+		.inv_items_footer_1 td{
+		border-bottom: 0.5px solid #454545;
+		}
+		</style>				 
+						<tr class="inv_items_footer_1">
+							<td colspan="2" class="lable"></td>
+							<td colspan="2" class="lable"><b>TOTAL QUANTITY:</b></td>
+							<td  class="tot_qua">400</td>
+							<td colspan="2" class="lable" style="text-align: right;">GRAND TOTAL:</td>
+							<td class="">1000</td>
+							<td class="">.00</td>
+						</tr>
+						<tr class="">
+							<td colspan="2"></td>
+							<td colspan="2"></td>
+							<td  class="tot_qua"></td>
+							<td colspan="2" class="lable" style="text-align: right;">LESS DISCOUNT:</td>
+							<td class="">1000</td>
+							<td class="">.00</td>
+						</tr>
+						<tr class="">
+							<td colspan="2"></td>
+							<td colspan="2"></td>
+							<td  class="tot_qua"></td>
+							<td colspan="2" class="lable" style="text-align: right;">ADD VAT @ 14.5%:</td>
+							<td class="">1000</td>
+							<td class="">.00</td>
+						</tr>
+						<tr class="">
+							<td colspan="4"></td>
+							<td  class="tot_qua"></td>
+							<td colspan="2" class="lable" style="text-align: right;">ADD VAT @ 5%:</td>
+							<td class="">1000</td>
+							<td class="">.00</td>
+						</tr>
+						<tr class="">
+							<td><div class="lable">RUPEES:</div></td>
+							<td colspan="3" style="text-align: left;padding-left:5%;"><div>FOUR HUNDRED AND FIFTY RUPEES ONLY</div></td>
+							<td  class="tot_qua"></td>
+							<td colspan="2" class="lable" style="text-align: right;">PAY AMOUNT:</td>
+							<td class="">1000</td>
+							<td class="">.00</td>
+						</tr>
+
+			
+
+						
+
+					</table>
+					<!---->
+				</td>
+			</tr>
+	
+			<tr class="inv_tc">
+				<td>
+					<table class="inv_tc_1">
+						<tr>
+							<td class="inv_tc_1_1">
+								<table>
+									<tr>
+										<td class="lable">TERMS & CONDITIONS:</td>
+									</tr>
+									<tr>
+										<td>
+											<p>1.Goods once sold will not taken back or exchanged:<br>
+											   2.Payments to be made within 15 from date of invoice:<br>
+											</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td class="inv_tc_1_1"><b>RECIEVER'S SIGNATURE<BR> WITH SEAL</b>
+							</td>
+							<td class="lable">AUTHORISED SIGNATORY</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
+	</html>

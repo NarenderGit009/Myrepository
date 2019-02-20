@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+   
+    <definition name="masterProductsList" extends="base.definition">
+         <put-attribute name="title" value="Medical Products List"></put-attribute>
+       <put-attribute name="menu" value="/WEB-INF/views/user/menu.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/list/masterProductsList.jsp"></put-attribute>
+    </definition>	
+      <definition name="productsStockList" extends="base.definition">
+         <put-attribute name="title" value="Medical Products List"></put-attribute>
+       <put-attribute name="menu" value="/WEB-INF/views/user/menu.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/list/stockList.jsp"></put-attribute>
+    </definition>
+   <definition name="ProductsLogList" extends="base.definition">  
+   		<put-attribute name="title" value="Product Log List"></put-attribute>     
+       <put-attribute name="menu" value="/WEB-INF/views/user/menu.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/list/logList.jsp"></put-attribute>
+    </definition> 
+     
+    <definition name="suppliersList" extends="base.definition">  
+   		<put-attribute name="title" value="Suppliers List"></put-attribute>     
+       <put-attribute name="menu" value="/WEB-INF/views/user/menu.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/list/suppliersList.jsp"></put-attribute>
+    </definition>
+     <definition name="expiredProducts" extends="base.definition">  
+   		<put-attribute name="title" value="Expired Products List"></put-attribute>     
+       <put-attribute name="menu" value="/WEB-INF/views/user/menu.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/transactions/expiredProducts.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="expiredProductsNotification" extends="ajax.defination">  
+   		       <put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/transactions/expiredProducts.jsp"></put-attribute>
+    </definition>         
+      <definition name="damageProducts" extends="base.definition">  
+   		<put-attribute name="title" value="Damage Products List"></put-attribute>     
+       <put-attribute name="menu" value="/WEB-INF/views/user/menu.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/transactions/damageProducts.jsp"></put-attribute>
+    </definition>
+    <definition name="productNotifications" extends="ajax.defination">  
+   		       <put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/list/expiryProductListNotification.jsp"></put-attribute>
+    </definition>  
+    <definition name="lessQuantityProducts" extends="ajax.defination">  
+   		       <put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/list/lessQuantityProductsList.jsp"></put-attribute>
+    </definition> 
+    
+ 
+    </tiles-definitions>

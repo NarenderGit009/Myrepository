@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="openAgencyForm" extends="base.definition">
+		<put-attribute name="title" value="Agency Form"></put-attribute>
+		<put-attribute name="menu" value="/WEB-INF/views/user/menu.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/agency/registerAgency.jsp"></put-attribute>
+	</definition>
+
+	<definition name="agencyForm" extends="ajax.defination">
+		<put-attribute name="menu" value=""></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/agency/registerAgency.jsp"></put-attribute>
+
+	</definition>
+	<definition name="agenciesList" extends="ajax.defination">
+		<put-attribute name="menu" value=""></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/agency/agencyList.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="agenciesLists" extends="base.definition">
+		<put-attribute name="title" value="Agencies List"></put-attribute>
+		<put-attribute name="menu" value="/WEB-INF/views/user/menu.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/agency/agencyList.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="EditAgencyForm" extends="ajax.defination">
+		<put-attribute name="menu" value=""></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/agency/registerAgency.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>

@@ -1,0 +1,175 @@
+package com.relyits.rmbs.serviceImpl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.relyits.rmbs.dao.ProductDAO;
+import com.relyits.rmbs.model.product.ProductDamageModel;
+import com.relyits.rmbs.model.product.ProductInventoryModel;
+import com.relyits.rmbs.model.product.ProductLogModel;
+import com.relyits.rmbs.model.product.ProductModel;
+import com.relyits.rmbs.model.refference.SubCategoryModel;
+import com.relyits.rmbs.model.registration.AgencyModel;
+import com.relyits.rmbs.service.ProductService;
+
+@Service("productService")
+public class ProductServiceImpl implements ProductService{
+	
+	@Autowired
+	private ProductDAO productDAO;
+	
+	//********************** Product *************************
+		public List<String> getAgenciesList(AgencyModel agencyModel) {
+			return productDAO.getAgenciesList(agencyModel);
+		 
+		}
+
+		public void addProduct(ProductInventoryModel productInventoryModel) {
+			productDAO.addProduct(productInventoryModel);
+			
+		}
+
+		public List<String> getProductsList(ProductModel productModel) {
+			return productDAO.getProductsList(productModel);
+		}
+		public List<ProductModel> getInventroyProductsList(ProductInventoryModel productInventoryModel){
+			return productDAO.getInventroyProductsList(productInventoryModel);
+		}
+
+		public ProductModel getProduct(ProductModel productModel) {
+				return productDAO.getProduct(productModel);
+		}
+		public List<ProductInventoryModel> getProductBatches(ProductInventoryModel productInventoryModel){
+			return productDAO.getProductBatches(productInventoryModel);
+		}
+		
+		public ProductInventoryModel getProductInventoryModelByBatchNo(ProductInventoryModel productInventoryModel) {
+			return productDAO.getProductInventoryModelByBatchNo(productInventoryModel);
+		}
+		
+		public ProductInventoryModel loadProductInventoryModel(ProductInventoryModel productInventoryModel) {
+			return productDAO.loadProductInventoryModel(productInventoryModel);
+		}
+		
+		public int upadteProductInventoryQuantity(ProductInventoryModel productInventoryModel) {
+			
+			return productDAO.upadteProductInventoryQuantity(productInventoryModel);
+		}
+
+		public List<SubCategoryModel> getSubCategoryListByCategory(SubCategoryModel subCategoryModel){
+		return productDAO.getSubCategoryListByCategory(subCategoryModel);
+		}
+
+		@Override
+		public List<ProductModel> listProductsByCreator(ProductModel productModel) {
+			
+			return productDAO.listProductsByCreator(productModel);
+		}
+
+		
+		@Override
+		public List<ProductInventoryModel> listProductsInventoryByOrganization(ProductInventoryModel productInventoryModel) {
+			return productDAO.listProductsInventoryByOrganization(productInventoryModel);
+		}
+
+		@Override
+		public List<ProductInventoryModel> listProductsInventoryByBranch(ProductInventoryModel productInventoryModel) {
+			return productDAO.listProductsInventoryByBranch(productInventoryModel);
+		}
+
+		@Override
+		public List<ProductInventoryModel> listProductsInventoryByOutlet(ProductInventoryModel productInventoryModel) {
+			return productDAO.listProductsInventoryByOutlet(productInventoryModel);
+		}
+
+		@Override
+		public ProductInventoryModel getProductInventory(ProductInventoryModel productInventoryModel) {
+			return productDAO.getProductInventory(productInventoryModel);
+		}
+
+		@Override
+		public Integer updatePIQuantity(ProductInventoryModel productInventoryModel) {
+			return productDAO.updatePIQuantity(productInventoryModel);
+		}
+
+		@Override
+		public List<ProductLogModel> listProductsLogByBranch(ProductLogModel productLogModel) {
+			return productDAO.listProductsLogByBranch(productLogModel);
+		}
+
+		@Override
+		public List<ProductLogModel> listProductsLogByOrganization(ProductLogModel productLogModel) {
+			return productDAO.listProductsLogByOrganization(productLogModel);
+		}
+
+		
+
+		@Override
+		public List<ProductInventoryModel> expiredProductsByOrganization(ProductInventoryModel productInventoryModel) {			
+			return productDAO.expiredProductsByOrganization(productInventoryModel);
+		}
+
+		@Override
+		public List<ProductInventoryModel> expiredProductsByBranch(ProductInventoryModel productInventoryModel) {
+			return productDAO.expiredProductsByBranch(productInventoryModel);
+		}
+
+		@Override
+		public List<ProductInventoryModel> expiredProductsByOutlet(ProductInventoryModel productInventoryModel) {
+			return productDAO.expiredProductsByOutlet(productInventoryModel);
+		}
+
+		@Override
+		public List<ProductDamageModel> listProductsDamageByOrganization(ProductDamageModel productDamageModel) {
+			return productDAO.listProductsDamageByOrganization(productDamageModel);
+		}
+
+		@Override
+		public List<ProductDamageModel> listProductsDamageByBranch(ProductDamageModel productDamageModel) {
+			return productDAO.listProductsDamageByBranch(productDamageModel);
+		}
+
+		@Override
+		public List<ProductDamageModel> listProductsDamageByOutlet(ProductDamageModel productDamageModel) {
+			return productDAO.listProductsDamageByOutlet(productDamageModel);
+		}
+
+		@Override
+		public List<ProductInventoryModel> listProductsGoingToExpireByOrganization(ProductInventoryModel productInventoryModel) {
+			return productDAO.listProductsGoingToExpireByOrganization(productInventoryModel);
+		}
+
+		@Override
+		public List<ProductInventoryModel> listProductsGoingToExpireByBranch(ProductInventoryModel productInventoryModel) {
+			return productDAO.listProductsGoingToExpireByBranch(productInventoryModel);
+		}
+
+		@Override
+		public List<ProductInventoryModel> listProductsGoingToExpireByOutlet(ProductInventoryModel productInventoryModel) {
+			return productDAO.listProductsGoingToExpireByOutlet(productInventoryModel);
+		}
+
+		@Override
+		public List<ProductInventoryModel> lessQuantityProductsByOrganization(ProductInventoryModel productInventoryModel) {
+			return productDAO.lessQuantityProductsByOrganization(productInventoryModel);
+		}
+
+		@Override
+		public List<ProductInventoryModel> lessQuantityProductsByBranchOrOutlet(ProductInventoryModel productInventoryModel) {
+			return productDAO.lessQuantityProductsByBranchOrOutlet(productInventoryModel);
+		}
+
+		@Override
+		 public void insertBulkProducts(List<ProductModel> list,AgencyModel agencyModel,int createdby,int createrRole){
+			 productDAO.insertBulkProducts(list,agencyModel,createdby,createrRole); 
+		 }
+		
+		@Override
+		public List<AgencyModel> getAgencyList() {
+			
+			return (ArrayList<AgencyModel>) productDAO.getAgencyList();
+		}
+}

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<!-- error pages -->
+	<definition name="error" extends="error.definition">
+		<put-attribute name="title" value="Error"></put-attribute>
+		<put-attribute name="menu" value=""></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/errorpages/sessionExpiredError.jsp"></put-attribute>
+
+	</definition>
+	<!-- error pages -->
+	<definition name="openAgencyForm" extends="base.definition">
+		<put-attribute name="title" value="Agencies List"></put-attribute>
+		<put-attribute name="menu"
+			value="/WEB-INF/views/user/activeUser/activeUserMenu.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/masters/registerAgency.jsp"></put-attribute>
+
+	</definition>
+
+	<definition name="agencyForm" extends="ajax.defination">
+
+		<put-attribute name="menu" value=""></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/masters/registerAgency.jsp"></put-attribute>
+
+	</definition>
+	<definition name="agenciesList" extends="ajax.defination">
+		<put-attribute name="menu" value=""></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/masters/agencyList.jsp"></put-attribute>
+	</definition>
+	<definition name="agenciesLists" extends="base.definition">
+		<put-attribute name="title" value="Agencies List"></put-attribute>
+		<put-attribute name="menu"
+			value="/WEB-INF/views/user/activeUser/activeUserMenu.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/masters/agencyList.jsp"></put-attribute>
+
+
+	</definition>
+	<definition name="EditAgencyForm" extends="ajax.defination">
+		<put-attribute name="menu" value=""></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/masters/registerAgency.jsp"></put-attribute>
+	</definition>
+
+
+	<!-- Doctor -->
+	<definition name="openDoctorForm" extends="base.definition">
+		<put-attribute name="title" value="Doctor Form"></put-attribute>
+		<put-attribute name="menu"
+			value="/WEB-INF/views/user/activeUser/activeUserMenu.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/masters/registerDoctor.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="doctorForm" extends="ajax.defination">
+		<put-attribute name="menu" value=""></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/masters/registerDoctor.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="reOpenDoctorForm" extends="ajax.defination">
+		<put-attribute name="menu" value=""></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/masters/registerDoctor.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="doctorsList" extends="ajax.defination">
+		<put-attribute name="menu" value=""></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/lists/doctorsList.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="doctorsLists" extends="base.definition">
+		<put-attribute name="title" value="Doctors List"></put-attribute>
+		<put-attribute name="menu"
+			value="/WEB-INF/views/user/activeUser/activeUserMenu.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/lists/doctorsList.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="editDoctorForm" extends="ajax.defination">
+		<put-attribute name="menu" value="Doctor Form"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/masters/registerDoctor.jsp"></put-attribute>
+	</definition>
+
+
+
+
+	<!-- Products -->
+
+	<definition name="openProductEntryForm" extends="base.definition">
+		<put-attribute name="title" value="Agencies List"></put-attribute>
+		<put-attribute name="menu"
+			value="/WEB-INF/views/user/activeUser/activeUserMenu.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/masters/productForm.jsp"></put-attribute>
+	</definition>
+
+	<definition name="reOpenProductForm" extends="ajax.defination">
+		<put-attribute name="menu" value=""></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/masters/productForm.jsp"></put-attribute>
+	</definition>
+
+	<!-- Branch -->
+
+	<definition name="openBranchRegisterForm" extends="base.definition">
+		<put-attribute name="title" value="Branch Registration"></put-attribute>
+		<put-attribute name="menu"
+			value="/WEB-INF/views/user/activeUser/activeUserMenu.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/masters/registerBranch.jsp"></put-attribute>
+	</definition>
+
+	<definition name="reOpenBranchRegisterForm" extends="ajax.defination">
+		<put-attribute name="menu" value=""></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/masters/registerBranch.jsp"></put-attribute>
+	</definition>
+
+	<!-- Outlet -->
+
+	<definition name="openOutletRegisterForm" extends="base.definition">
+		<put-attribute name="title" value="Outlet Registration"></put-attribute>
+		<put-attribute name="menu"
+			value="/WEB-INF/views/branch/activeBranch/activeBranchMenu.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/masters/registerOutlet.jsp"></put-attribute>
+	</definition>
+
+	<definition name="reOpenOutletRegisterForm" extends="ajax.defination">
+		<put-attribute name="menu" value=""></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/masters/registerOutlet.jsp"></put-attribute>
+	</definition>
+
+</tiles-definitions>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<!-- purchase reports -->
+	<definition name="openRevenueAccountsForm" extends="base.definition">
+		<put-attribute name="title" value="Revenue Accounts"></put-attribute>
+		<put-attribute name="menu" value="/WEB-INF/views/user/menu.jsp"></put-attribute>
+		<put-attribute name="body"	value="/WEB-INF/views/revenue/revenueAccounts.jsp"></put-attribute>
+	</definition>
+
+	 <definition name="revenueAccounts" extends="ajax.defination">
+		<put-attribute name="menu" value=""></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/revenue/revenueAccountsDetails.jsp"></put-attribute>
+	</definition> 
+	
+</tiles-definitions>

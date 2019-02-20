@@ -1,0 +1,152 @@
+package com.relyits.rmbs.daoImpl;
+
+import java.util.List;
+
+import org.hibernate.Criteria;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.relyits.rmbs.dao.PurchaseDAO;
+import com.relyits.rmbs.dao.SalesDAO;
+import com.relyits.rmbs.model.product.ProductInventoryModel;
+import com.relyits.rmbs.model.product.ProductModel;
+import com.relyits.rmbs.model.purchase.PurchaseLineItemsModel;
+import com.relyits.rmbs.model.purchase.PurchaseOrderModel;
+import com.relyits.rmbs.model.refference.CategoryModel;
+import com.relyits.rmbs.model.refference.RoleModel;
+import com.relyits.rmbs.model.refference.SubCategoryModel;
+import com.relyits.rmbs.model.registration.AgencyModel;
+import com.relyits.rmbs.model.registration.BranchModel;
+import com.relyits.rmbs.model.sales.SalesLineItemsModel;
+import com.relyits.rmbs.model.sales.SalesOrderModel;
+
+
+@Repository("salesDAO")
+public class SalesDAOImpl implements SalesDAO{
+
+	@Autowired
+	private SessionFactory sessionFactory;
+	private SalesLineItemsModel salesLineItemsModel=null;
+	private SalesOrderModel salesOrderModel=null;
+	private ProductModel productModel = null;
+	private ProductInventoryModel productInventoryModel=null;
+	private CategoryModel categoryModel=null;
+	private SubCategoryModel subCategoryModel=null;
+	private RoleModel creatorRoleModel=null;
+	private AgencyModel agencyModel=null;
+	private BranchModel branchModel=null;
+	
+	public SalesLineItemsModel createSalesOrder(SalesLineItemsModel salesLineItemsModel1) {
+		Session session=sessionFactory.openSession();
+		int i=0;
+		try{
+			i=(int) session.createSQLQuery("select max(RMBS30101) from rmbs.rmbs301").list().get(i);
+		}catch(Exception e){
+             
+		}
+		
+		try {
+			session.beginTransaction();
+			salesOrderModel=new SalesOrderModel();
+			salesOrderModel=salesLineItemsModel1.getSalesOrderModel();
+			
+			String oIdByDt="SO"+salesOrderModel.getOrderIdbyDate().replaceAll("-", "")+"/"
+					+salesOrderModel.getBranchModel().getId()+"/"
+					+salesOrderModel.getOutletModel().getId()+"/"
+					+(i+1);
+			
+			
+			salesOrderModel.setOrderIdbyDate(oIdByDt);
+			session.saveOrUpdate(salesOrderModel);
+			int sOId=salesOrderModel.getId();
+			session.saveOrUpdate(salesLineItemsModel1);
+			int sLIId=salesLineItemsModel1.getId();
+			productInventoryModel=salesLineItemsModel1.getProductInventoryModel();
+			productInventoryModel.setQuantity(productInventoryModel.getQuantity()-salesLineItemsModel1.getQuantity());
+			session.saveOrUpdate(productInventoryModel);
+			session.getTransaction().commit();
+			
+			salesLineItemsModel=(SalesLineItemsModel) session.get(SalesLineItemsModel.class, sLIId);
+		} catch (Exception e) {
+			session.cancelQuery();
+			session.close();
+		}
+		
+		return salesLineItemsModel;
+	}
+	public SalesOrderModel getSalesOrder(SalesOrderModel salesOrderModel1){
+		Session session=sessionFactory.openSession();
+		salesOrderModel=(SalesOrderModel) session.get(SalesOrderModel.class, salesOrderModel1.getId());
+		session.close();
+		return salesOrderModel;
+	}
+	
+	public SalesLineItemsModel createSalesOrderLineItems(SalesLineItemsModel salesLineItemsModel){
+		
+		return salesLineItemsModel;
+	}
+	
+	public List<SalesOrderModel> SalesOrderListByOrganization(
+			SalesOrderModel salesOrderModel) {
+		
+		return null;
+	}
+	
+	public List<SalesOrderModel> SalesOrderListByBranch(
+			SalesOrderModel salesOrderModel) {
+				return null;
+		
+	}
+	
+	public List<SalesOrderModel> SalesOrderListByOutlet(
+			SalesOrderModel salesOrderModel) {
+	
+		return null;
+	}
+	
+	public List<SalesLineItemsModel> getSalesLineItems(
+			SalesLineItemsModel salesLineItemsModel) {
+		
+		return null;
+	}
+	
+	public List<SalesLineItemsModel> SalesLineItemsListByOrganization(
+			SalesLineItemsModel salesLineItemsModel) {
+		
+		return null;
+	}
+	
+	public List<SalesLineItemsModel> SalesLineItemsListByBranch(
+			SalesLineItemsModel salesLineItemsModel) {
+		
+		return null;
+	}
+	
+	public List<SalesLineItemsModel> SalesLineItemsListByOutlet(
+			SalesLineItemsModel salesLineItemsModel) {
+		return null;
+	}
+	
+	public List<SalesLineItemsModel> getSalesLineItemsModelsBySalesOrderModel(
+			SalesOrderModel salesOrderModel1) {
+		
+		Session session=sessionFactory.openSession();
+		
+		Criteria salesLineItemsCriteria=session.createCriteria(SalesLineItemsModel.class,"salesLineItemsModel")
+				.createAlias("salesLineItemsModel.salesOrderModel", "saleOrder")
+				.add(Restrictions.eq("saleOrder.id",salesOrderModel1.getId()));
+		List<SalesLineItemsModel> salesLineItemsModels=salesLineItemsCriteria.list();
+		session.close();
+		return salesLineItemsModels;
+	}
+
+
+
+	
+
+}

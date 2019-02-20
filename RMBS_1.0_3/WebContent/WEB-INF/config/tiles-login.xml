@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+    <definition name="login" extends="login.definition">
+        <put-attribute name="title" value="RMBS Welcome Page"></put-attribute>
+        <put-attribute name="form" value="/WEB-INF/views/login/login.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/login/body.jsp"></put-attribute>
+        
+    </definition>
+ 
+     <definition name="logout" extends="login.definition">
+        <put-attribute name="title" value="RMBS Welcome Page"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/login/login.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/login/body.jsp"></put-attribute>
+    </definition>
+    
+   
+ </tiles-definitions>

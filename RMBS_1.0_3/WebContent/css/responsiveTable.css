@@ -1,0 +1,94 @@
+/* 
+Generic Styling, for Desktops/Laptops 
+*/
+.list table { 
+  width: 100%; 
+  border-collapse: collapse; 
+}
+/* Zebra striping */
+.list tr:nth-of-type(odd) { 
+  background: #eee; 
+}
+.list th { 
+ 
+   background: url("../images/green.png") repeat scroll 0 0 transparent;
+  color: white; 
+  font-weight: bold; 
+}
+.list td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+}
+
+.list example th, example td{
+	width:60px;
+	
+}
+/*@media 
+only screen and (min-width: 760px){
+	.list td,th {
+	white-space: nowrap;
+   width: 5em;
+   overflow: hidden;
+   text-overflow: ellipsis;
+	}
+}
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 749px),
+(min-width:750px) and (max-width: 980px)  {
+ 
+    /* Force table to not be like tables anymore */
+    .list table, thead, tbody, th, td, tr { 
+        display: block; 
+    }
+     
+    /* Hide table headers (but not display: none;, for accessibility) */
+     .list thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+     
+    .list tr { border: 1px solid #ccc; }
+     
+    .list td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 100px; 
+        
+    }
+     
+    .list td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; color: red;
+        white-space: nowrap;
+    }
+     
+    /*
+    Label the data
+    */
+   /* td:nth-of-type(1):before { content: "Employee"; }
+    td:nth-of-type(2):before { content: "xHTML"; }
+    td:nth-of-type(3):before { content: "CSS"; }
+    td:nth-of-type(4):before { content: "JS"; }
+    td:nth-of-type(5):before { content: "jQuery"; }
+    td:nth-of-type(6):before { content: "jQuery Mobile"; }
+    td:nth-of-type(7):before { content: "Sencha Touch"; }
+    td:nth-of-type(9):before { content: "PHP"; }
+	 td:nth-of-type(10):before { content: "PHP (OO)"; }
+	 td:nth-of-type(11):before { content: "CakePHP)"; }
+*/
+}

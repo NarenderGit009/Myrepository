@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+   <!-- Product Purchase Entry Views Start -->
+	
+    <definition name="openMedicalProductPurchaseForm" extends="base.definition">
+		<put-attribute name="title" value="Medical Product Purchase Form"></put-attribute>
+		<put-attribute name="menu" value="/WEB-INF/views/user/menu.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/product/purchase/medical/medicalProductPurchaseForm.jsp"></put-attribute>
+	</definition>
+	<definition name="openGeneralProductPurchaseForm" extends="base.definition">
+		<put-attribute name="title" value="Medical Product Purchase Form"></put-attribute>
+		<put-attribute name="menu" value="/WEB-INF/views/user/menu.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/product/purchase/general/generalProductPurchaseForm.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="reOpenMedicalProductPurchaseForm" extends="base.definition">
+		<put-attribute name="menu" value=""></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/product/purchase/medical/medicalPurchaseForm.jsp"></put-attribute>
+	</definition>
+	<definition name="reOpenGeneralProductPurchaseForm" extends="base.definition">
+		<put-attribute name="menu" value=""></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/product/purchase/general/generalPurchaseForm.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Organization Views -->
+    
+  <definition name="openMedicalProductPurchaseFormByOrganization" extends="base.definition">
+        <put-attribute name="title" value="Medical Product Purchase Form"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/organization/activeOrganization/activeOrganizationMenu.jsp"></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/purchase/medical/medicalPurchaseForm.jsp"></put-attribute>
+    </definition>
+    
+        <definition name="openGeneralProductPurchaseFormByOrganization" extends="base.definition">
+        <put-attribute name="title" value="General Product Purchase Form"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/organization/activeOrganization/activeOrganizationMenu.jsp"></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/purchase/general/generalProductPurchaseForm.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="reOpenMedicalProductPurchaseFormByOrganization" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/purchase/medical/medicalPurchaseForm.jsp"></put-attribute>
+    </definition>
+    
+        <definition name="reOpenGeneralProductPurchaseFormByOrganization" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/purchase/general/generalPurchaseForm.jsp"></put-attribute>
+    </definition>
+    
+    <!-- End Organization Views -->
+    
+    <!-- Branch Views -->
+    
+     <definition name="openMedicalProductPurchaseFormByBranch" extends="base.definition">
+        <put-attribute name="title" value="Medical Product Purchase Form"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/branch/activeBranch/activeBranchMenu.jsp"></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/purchase/medical/medicalPurchaseForm.jsp"></put-attribute>
+    </definition>
+    
+        <definition name="openGeneralProductPurchaseFormByBranch" extends="base.definition">
+        <put-attribute name="title" value="General Product Purchase Form"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/branch/activeBranch/activeBranchMenu.jsp"></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/purchase/general/generalProductPurchaseForm.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="reOpenMedicalProductPurchaseFormByBranch" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/purchase/medical/medicalPurchaseForm.jsp"></put-attribute>
+    </definition>
+    
+        <definition name="reOpenGeneralProductPurchaseFormByBranch" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/purchase/general/generalPurchaseForm.jsp"></put-attribute>
+    </definition>
+    
+    <!-- End Branch Views -->
+    
+     <!-- Outlet Views -->
+     
+    <definition name="openMedicalProductPurchaseFormByOutlet" extends="base.definition">
+        <put-attribute name="title" value="Medical Product Purchase Form"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/outlet/activeOutlet/activeOutletMenu.jsp"></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/purchase/medical/medicalPurchaseForm.jsp"></put-attribute>
+    </definition>
+    
+        <definition name="openGeneralProductPurchaseFormByOutlet" extends="base.definition">
+        <put-attribute name="title" value="General Product Purchase Form"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/outlet/activeOutlet/activeOutletMenu.jsp"></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/purchase/general/generalProductPurchaseForm.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="reOpenMedicalProductPurchaseFormByOutlet" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/purchase/medical/medicalPurchaseForm.jsp"></put-attribute>
+    </definition>
+    
+        <definition name="reOpenGeneralProductPurchaseFormByOutlet" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/purchase/general/generalPurchaseForm.jsp"></put-attribute>
+    </definition>
+    
+    <!-- End Outlet Views -->
+	<!--End Product Purchase Entry Views -->
+	
+	<!-- Purchase Invoice Views -->
+     <definition name="pOInvoiceView" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/purchase/invoice.jsp"></put-attribute>
+    </definition>
+	<!-- End Purchase Invoice Views -->
+
+    
+     <!-- Purchase Related Lists -->   
+   <definition name="purchaseOrderList" extends="base.definition">  
+   		<put-attribute name="title" value="purchase Order List"></put-attribute>     
+       <put-attribute name="menu" value="/WEB-INF/views/user/menu.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/purchase/list/purchaseOrderList.jsp"></put-attribute>
+    </definition>
+    <definition name="reOpenPurchaseOrderList" extends="ajax.defination">     		   
+       <put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/purchase/list/purchaseOrderList.jsp"></put-attribute>
+    </definition>
+     <definition name="purchaseLineItemsList" extends="ajax.defination">     		
+       <put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/purchase/list/purchaseLineItemsList.jsp"></put-attribute>
+    </definition>
+    
+    <!-- End Purchase Related Lists -->
+    
+    
+    <!--  Purchase returns  -->
+    
+    <definition name="purchaseReturnsForm" extends="base.definition">
+      <put-attribute name="menu" value="/WEB-INF/views/organization/activeOrganization/activeOrganizationMenu.jsp"></put-attribute>
+      <put-attribute name="body" value="/WEB-INF/views/product/purchase/purchaseReturns.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="purchaseLineItemsDisplay" extends="ajax.defination">
+      <put-attribute name="body" value="/WEB-INF/views/product/purchase/purchaseOrderLineitemsData.jsp"></put-attribute>
+    </definition>
+    </tiles-definitions>

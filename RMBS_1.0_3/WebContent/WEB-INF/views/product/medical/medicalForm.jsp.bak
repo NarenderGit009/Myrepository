@@ -1,0 +1,1100 @@
+
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<%-- <script type="text/javascript" language="javascript" src="js/jquery.js"></script>--%>
+<script type="text/javascript" src="js/json2.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+<link rel="stylesheet" type="text/css"
+	href="css/masters/productentryform.css" />
+
+<%-- <script type="text/javascript" src="js/jquery1.7.2.js"></script>--%>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Product Stock Entry</title>
+
+<script type="text/javascript">
+
+
+function doFormValidate(){
+	//Form validating
+	 if($("#piid1").val()==""){
+		 if($("#subcategory1").text()=="TABLET"){
+			// var letters = /^[A-Za-z\s]+$/;//!c.match(letters);
+			 if($("#agencyname1").val()==""){alert("Please choose one registered agency");$("#agencyname1").focus();return false;}
+			 if($("#agencyid1").val()==""){alert("Some Errors in form filling, Please refresh and try again");return false;}
+			 if($("#pname1").val()==""){alert("Please choose product from products or enter new product");$("#pname1").focus();return false;}
+			 //else if($("#pname1").val().){return false;}
+			 if($("#branchId").val()==0){alert("Please select the branch");$("#branchId").focus();return false;}
+			 if($("#mfcompany1").val()==""){alert("Please fill the manifacturing company");$("#mfcompany1").focus();return false;}
+			 if($("#schdrug1").val()==""){alert("Please fill the schedule drug type");$("#schdrug1").focus();return false;}
+			 if($("#batchNo1").val()==""){alert("Please fill the Product Batch No");$("#batchNo1").focus();return false;}
+			 if($("#subcategory1").val()==""){alert("Please choose one category");$("#subcategory1").focus();return false;}
+			 if($("#noofsheets1").val()=="" || $("#noofsheets1").val()=="0"){alert("Please fill the no of sheets");$("#noofsheets1").focus();return false;}
+			 if($("#quantitypersheet1").val()=="" || $("#quantitypersheet1").val()=="0"){alert("Please fill the quantity per sheet");$("#quantitypersheet1").focus();return false;}
+			 if($("#pricepersheet1").val()=="" || $("#pricepersheet1").val()=="0"){alert("Please fill the one sheet price");$("#pricepersheet1").focus();return false;}
+			 if($("#price1").val()=="" || $("#price1").val()=="0"){alert("Some problem, please enter manually");$("#price1").removeAttr("readonly").focus();return false;}
+//			 if($("#pid1").val()==""){alert("Please fill the product expiry date");$( "#pid1" ).focus();return false;}
+			 if($("#dlpp1").val()=="" || $("#dlpp1").val()=="0"){alert("Please fill the one sheet dealer price");$("#dlpp1").focus();return false;}
+			 if($("#dlprice1").val()=="" || $("#dlprice1").val()=="0"){alert("Some problem please enter dealer price manually");$("#dlprice1").removeAttr("readonly").focus();return false;}
+			 if($("#quantity1").val()=="" || $("#quantity1").val()=="0"){alert("Some problem, please enter manually");$("#quantity1").removeAttr("readonly").focus();return false;}
+			 if($("#expirydate1").val()=="" || $("#expirydate1").val()=="0"){alert("Please fill the product expiry date");$("#expirydate1").focus();return false;}
+			 
+//			 if($("#piid1").val()==""){alert("Please fill the product expiry date");$( "#piid1" ).focus();return false;}			 
+		 }else{
+			 if($("#branchId").val()==0){alert("Please select the branch");$("#branchId").focus();return false;}
+			 if($("#agencyid1").val()==""){alert("Some Errors in form filling, Please refresh and try again");return false;}
+			 if($("#agencyname1").val()==""){alert("Please choose one registered agency");$("#agencyname1").focus();return false;}
+			 if($("#pname1").val()==""){alert("Please choose product from products or enter new product");$("#pname1").focus();return false;}
+			 if($("#mfcompany1").val()==""){alert("Please fill the manifacturing company");$("#mfcompany1").focus();return false;}
+			 if($("#schdrug1").val()==""){alert("Please fill the schedule drug type");$("#schdrug1").focus();return false;}
+			 if($("#batchNo1").val()==""){alert("Please fill the Product Batch No");$("#batchNo1").focus();return false;}
+			 if($("#subcategory1").val()==""){alert("Please choose one category");$("#subcategory1").focus();return false;}
+			 if($("#price1").val()=="" || $("#price1").val()=="0"){alert("Please fill the price");$("#price1").removeAttr("readonly").focus();return false;}
+			 if($("#dlprice1").val()=="" || $("#dlprice1").val()=="0"){alert("Please fill the dealer price");$("#dlprice1").removeAttr("readonly").focus();return false;}
+			 if($("#quantity1").val()=="" || $("#quantity1").val()=="0"){alert("Please fill the product quantity");$("#quantity1").removeAttr("readonly").focus();return false;}	 
+		 }
+ 
+	 }else{
+		 if($("#subcategory1").text()=="TABLET"){
+			 if($("#branchId").val()==0){alert("Please select the branch");$("#branchId").focus();return false;}
+			 if($("#pname1").val()==""){alert("Please choose product from products or enter new product");$("#pname1").focus();return false;}
+			 if($("#mfcompany1").val()==""){alert("Please fill the manifacturing company");$("#mfcompany1").focus();return false;}
+			 if($("#schdrug1").val()==""){alert("Please fill the schedule drug type");$("#schdrug1").focus();return false;}
+			 if($("#batchNo1").val()==""){alert("Please fill the Product Batch No");$("#batchNo1").focus();return false;}
+			 if($("#subcategory1").val()==""){alert("Please choose one category");$("#subcategory1").focus();return false;}
+			// if($("#expirydate1").val()==""){alert("Please fill the product expiry date");$("#expirydate1").focus();return false;}
+			 if($("#noofsheets1").val()==""){alert("Please fill the no of sheets");$("#noofsheets1").focus();return false;}
+			 if($("#quantitypersheet1").val()==""){alert("Please fill the quantity per sheet");$("#quantitypersheet1").focus();return false;}
+			 if($("#pricepersheet1").val()==""){alert("Please fill the one sheet price");$("#pricepersheet1").focus();return false;}
+			 if($("#price1").val()=="" || $("#price1").val()=="0"){alert("Some problem, please enter manually");$("#price1").removeAttr("readonly").focus();return false;}
+//			 if($("#pid1").val()==""){alert("Please fill the product expiry date");$( "#pid1" ).focus();return false;}
+			 if($("#dlpp1").val()=="" || $("#dlpp1").val()=="0"){alert("Some problem, please enter manually");$("#dlpp1").focus();return false;}
+			 if($("#dlprice1").val()=="" || $("#dlprice1").val()=="0"){alert("Please fill the one sheet dealer price");$("#dlprice1").removeAttr("readonly").focus();return false;}
+			 if($("#quantity1").val()=="" || $("#quantity1").val()=="0"){alert("Some problem, please enter manually");$("#quantity1").removeAttr("readonly").focus();return false;}  
+		 }else{
+			 if($("#branchId").val()==0){alert("Please select the branch");$("#branchId").focus();return false;}
+			 if($("#pname1").val()==""){alert("Please choose product from products or enter new product");$("#pname1").focus();return false;}
+			 if($("#mfcompany1").val()==""){alert("Please fill the manifacturing company");$("#mfcompany1").focus();return false;}
+			 if($("#schdrug1").val()==""){alert("Please fill the schedule drug type");$("#schdrug1").focus();return false;}
+			 if($("#batchNo1").val()==""){alert("Please fill the Product Batch No");$("#batchNo1").focus();return false;}
+			 if($("#subcategory1").val()==""){alert("Please choose one category");$("#subcategory1").focus();return false;}
+			 if($("#price1").val()=="" || $("#price1").val()=="0"){alert("Some problem, please enter manually");$("#price1").removeAttr("readonly").focus();return false;}
+			 if($("#dlprice1").val()=="" || $("#dlprice1").val()=="0"){alert("Some problem please enter manually");$("#dlprice1").removeAttr("readonly").focus();return false;}
+			 if($("#quantity1").val()=="" || $("#quantity1").val()=="0"){alert("Please fill the product quantity");$("#quantity1").removeAttr("readonly").focus();return false;}
+			
+		 }
+		 
+	 }
+}
+
+function addProduct(val1,val2){
+	 
+var data= $('.ProductEntry'+val1+'').serialize();
+//alert(data);
+
+ 
+	   loadAjaxPopup(msg);
+
+$.post('saveProduct.html?flag='+val1+'&uid='+val2, data, function(result){
+	//alert(result);
+	$(".medical_form_container").html(result);
+// $('#msg').html(result.msg).css("color", "orange");
+});
+//$("#msg").css("width", "200px");
+
+disableAjaxPopup();
+}
+
+function getProductDetails(val)
+ {
+ //alert(val); $.trim(str)
+ var text=$("#pname1").val();
+ var type=7;
+ if(text!=""){
+ var data=val;
+ var msg={"displaymsg":"Gathering Product Information. Please Wait..."};
+
+ loadAjaxPopup(msg);
+   
+ $.post('getProduct.html?pid='+val+"&flag="+type, data, function(productModel){
+ 	//alert(result.mfcompany);
+ 	if(productModel.id!=null){
+ 		
+ 		$("#mfcompany1").val(productModel.mFCompanay);
+ 	    $("#schdrug1").val(productModel.schDrug);
+ 	   // $("#subcategory1").val(productModel.subCategoryModel.id);
+ 	    $("#subcategory1").val(''+productModel.subCategoryModel.id+'');
+ 	    $('#subcategory1 option[value!='+productModel.subCategoryModel.id+']').attr("disabled", "true");
+ 	    // if($("#subcategory1 option:selected").text()!="Tablet"){
+ 	   // $("#piid1").val(productModel.pinvid);
+ 		//$("#price1").val(productModel.price);
+ 	   // $("#dlprice1").val(productModel.dlprice);
+ 	    alert(productModel.subCategoryModel.category);
+ 	 
+ 	    if(productModel.subCategoryModel.category!="TABLET"){
+ 		    	$('#tab1').hide();
+ 		    	$('#tab2').hide();
+ 		    	$('#tab3').hide();
+ 		    	$('#tab4').hide();
+ 		      /*  if($("#batchNo1").val()!=""){
+ 		        	
+ 	  	    	        $('#price1').focus();
+ 	  	           }else{
+ 	  	    	        $('#batchNo1').focus(); 
+ 	  	          }
+ 		       */
+ 		    	// $('#batchNo1').val("").focus();
+ 		       
+ 		       $('#noofsheets1').attr("readonly", "true");
+ 			   $("#pricepersheet1").attr("readonly", "true");
+ 	           $('#dlpp1').attr("readonly", "true");
+ 	           $('#quantitypersheet1').attr("readonly", "true");
+ 	           
+ 	           $("#quantity1").removeAttr("readonly");
+ 	 		  $('#price1').removeAttr("readonly");
+ 	 		  $("#dlprice1").removeAttr("readonly");
+ 		       
+ 	    	$('#noofsheets1').focus();
+ 		   }else{
+ 		    	$('#tab1').show();
+ 		    	$('#tab2').show();
+ 		    	$('#tab3').show();
+ 		    	$('#tab4').show();
+ 		   /*     if($("#batchNo1").val()!=""){
+ 		    	    	 $('#noofsheets1').focus();
+ 		    	    }else{
+ 		    	    	 $('#batchNo1').focus(); 
+ 		    	     }
+ 		   */  
+ 		    	// $('#batchNo1').val("").focus();
+ 		   
+ 		      $("#quantity1").attr("readonly", "true");
+ 			  $('#price1').attr("readonly", "true");
+ 			  $("#dlprice1").attr("readonly", "true");
+ 		   
+ 			  $('#quantitypersheet1').removeAttr("readonly");
+ 			  $('#noofsheets1').removeAttr("readonly");
+ 			  $("#pricepersheet1").removeAttr("readonly");
+ 	          $('#dlpp1').removeAttr("readonly");
+ 			  
+ 			   $('#noofsheets1').focus();
+ 		   }
+ 		
+ 	}$("#subcategory1 option").removeAttr("disabled");
+
+     });
+ }else{
+	$('#tab1').show();
+	$('#tab2').show();
+	$('#tab3').show();
+	$('#tab4').show();
+	$('#tab5').show();
+	$('#tab6').show();
+	
+	
+   }
+ disableAjaxPopup();
+ }
+
+
+/*************************************************************************/
+  function validateBatchNo(val,user)
+ {
+	//alert($("#branchId1").val());
+		if($("#branchId1").val()!=0){
+			//$("#branchId : selected").val();
+			var data = { bId: $("#branchId1").val(),batchNo:$("#batchNo"+val+"").val(),type:$("#category1").val()};
+			var bID=data.bId;
+		 //var data=$("#batchNo"+val+"").val();
+		// var type=$("#category1").val();
+		if(data!=""){
+			
+			 var msg={"displaymsg":"Validating Batch Number. Please Wait..."};
+			 
+			loadAjaxPopup(msg); 
+		  $.post('validateBatchNo.html', data, function(result){
+			  
+			  resultHtml="Message "+result.message+"<br>",
+			  resultHtml+="Branch Id "+$("#branchId1").val()+"<br>",
+			  resultHtml+="name "+result.productBean.name+"<br>",
+			  resultHtml+="pid "+result.productBean.id+"<br>",
+			  resultHtml+="piid "+result.id+"<br>",
+			  resultHtml+="category "+result.productBean.categoryBean.category+"<br>",
+			  resultHtml+="category id "+result.productBean.categoryBean.id+"<br>",
+			  resultHtml+="MFG "+result.productBean.mFCompanay+"<br>",
+			  resultHtml+="schDrug "+result.productBean.schDrug+"<br>",
+			  resultHtml+="Price "+result.productBean.schDrug+"<br>",
+			  resultHtml+="DlPP "+result.dlPrice+"<br>";
+			  resultHtml+="AID "+result.agencyBean.id+"<br>";
+			  resultHtml+="AgencyName "+result.agencyBean.agencyName+"<br>";
+			  
+			//  alert(resultHtml);
+			$('.col1').html(resultHtml);
+		  
+			   if(result.productBean.categoryBean.id!=8){
+				   if(result.batchNo!==null){
+					   
+				   
+					   $("#submit1").css("display", "none");
+					   $("#update1").css("display", "block");
+					   
+				   clearAttributes();
+					   
+					$("#piid1").val(result.id);
+					$("#price1").val(result.price);
+				    $("#dlprice1").val(result.dlPrice);
+					$("#expirydate1").val(result.expiryDate);
+					$("#branchId1").attr("readonly", "true");
+					
+					$('#branchId1 option[value!='+bID+']').attr("disabled","true");
+				  //  $('#tab5').hide();
+				 //   $('#tab6').hide();
+				      if(result.productBean.id!=$("#pid1").val()){
+				    	  if($("#pname1").val()!="" && $("#pname1").val()!=result.productBean.name){
+
+					    	   alert("selected batchno not in the choosen product details");
+				    	  }
+
+						   $("#pid1").val(result.productBean.id);
+						   $("#agencyid1").val(result.agencyBean.id);
+
+		                   $("#pname1").val(result.productBean.name);
+				    	   $("#agencyname1").val(result.agencyBean.agencyName);
+				    	   $("#mfcompany1").val(result.productBean.mFCompanay);
+				           $("#schdrug1").val(result.productBean.schDrug);
+				           $("#subcategory1").val(result.productBean.subCategoryBean.id);
+				           $("#subcategory1").val(result.productBean.subCategoryBean.id);
+				           
+						   $("#pname1").attr("readonly", "true");
+						   $("#agencyname1").attr("readonly", "true");
+				           $("#mfcompany1").attr("readonly", "true");
+				           $("#schdrug1").attr("readonly", "true");
+				           $('#subcategory1 option[value!='+result.productBean.subCategoryBean.id+']').attr("disabled", "true");
+
+
+		                  //   alert("result.productBean.subCategoryBean.subCategory"+result.productBean.subCategoryBean.subCategory);
+				    	  
+			                  if(result.productBean.subCategoryBean.subCategory!="TABLET"){
+
+									  $('#noofsheets1').attr("readonly", "true");
+									  $("#pricepersheet1").attr("readonly", "true");
+						              $('#quantitypersheet1').attr("readonly", "true");
+						              $('#price1').attr("readonly", "true");
+						              $('#dlpp1').attr("readonly", "true");
+						              $("#dlprice1").attr("readonly", "true");
+						              $("#expirydate1").attr("readonly", "true");
+
+			     	    			  $('#tab1').hide();
+			     	    	          $('#tab2').hide();
+			     	    	         $('#tab3').hide();
+			     	    	          $('#tab4').hide();
+									  $("#quantity1").removeAttr("readonly");
+			     	                  $('#quantity1').focus();
+			     	                 
+			                  }else{             
+			     	    	          
+									  $('#noofsheets1').removeAttr("readonly");
+									  $('#quantitypersheet1').removeAttr("readonly");
+		                              $('#price1').removeAttr("readonly");
+						              $('#dlpp1').removeAttr("readonly");
+									  $("#quantity1").removeAttr("readonly");
+									  $('#price1').attr("readonly", "true");
+									  $("#dlprice1").attr("readonly", "true");
+									  $('#dlpp1').attr("readonly", "true");
+									 
+									  $("#pricepersheet1").attr("readonly", "true");
+						              $("#expirydate1").attr("readonly", "true");						  
+									  
+									  
+									  
+									  $('#tab1').show();
+			     	    	          $('#tab2').show();
+			     	    		      $('#tab3').show();
+			     	    	          $('#tab4').show();
+			     	    	          
+			     	    	          $("#price1").attr("readonly","true");
+			    		              $("#dlprice1").attr("readonly","true");
+			    		              $("#quantity1").attr("readonly","true");
+
+									  $('#noofsheets1').focus();
+			     	         }
+			          $("#submit1").attr("disabled", "true");
+			          $("#update1").removeAttr("disabled");
+				     }
+				}else{
+						/*	$('#tab5').show();
+							$('#tab6').show();*/
+							
+							$('#branchId1 option').removeAttr("disabled");
+							$("#subcategory1 option").removeAttr("disabled");
+					//$("#branchId1").removeAttr("remove");
+							 $("#submit1").css("display", "block");
+							   $("#update1").css("display", "none");
+							
+				//	alert("-----"+$("#subcategory1 :selected").text());
+				   if($("#subcategory1 :selected").text()!="TABLET"){
+				//	if($("#subcategory1").text()!=7){
+				    	$("#piid1").val("");
+						$("#pid1").val("");
+					    $("#agencyid1").val("");
+						$("#pname1").val("");
+					    $("#agencyname1").val("");
+				        $('#mfcompany1').val("");
+						$("#price1").val("");
+					    $("#dlprice1").val("");
+					    $("#quantity1").val("");
+						 $("#expirydate1").val("");
+					 
+					    $("#agencyname1").removeAttr("readonly");
+		                $("#pname1").removeAttr("readonly");
+		                $("#subcategory1").removeAttr("readonly");
+					    $("#mfcompany1").removeAttr("readonly");
+		                $("#schdrug1").removeAttr("readonly");
+						 $("#expirydate1").removeAttr("readonly");
+						 $("#price1").removeAttr("readonly");
+						    $("#dlprice1").removeAttr("readonly");
+
+									  $('#noofsheets1').attr("readonly", "true");
+									  $("#pricepersheet1").attr("readonly", "true");
+						              $('#dlpp1').attr("readonly", "true");
+				  	  
+				  	    
+					    $('#tab1').hide();
+			  	        $('#tab2').hide();
+			  	        $('#tab3').hide();
+			  	        $('#tab4').hide();
+					    $("#price1").removeAttr("readonly");
+					    $("#dlprice1").removeAttr("readonly");
+					    $("#quantity1").removeAttr("readonly");
+					    $('#agencyname1').focus();
+					    
+					}else{
+
+						$("#piid1").val("");
+						$("#pid1").val("");
+					    $("#agencyid1").val("");
+						$("#pname1").val("");
+					    $("#agencyname1").val("");
+				        $('#mfcompany1').val("");
+						$("#price1").val("");
+					    $("#dlprice1").val("");
+					    $("#quantity1").val("");
+						$("#subcategory1").val(1);
+		                $("#expirydate1").val("");
+
+					    $('#tab1').show();
+			  	        $('#tab2').show();
+			  	        $('#tab3').show();
+			  	        $('#tab4').show();   
+
+			  
+			  	        
+			  	        $("#agencyname1").removeAttr("readonly");
+			  	      $("#pname1").removeAttr("readonly");
+			  	    $("#mfcompany1").removeAttr("readonly");
+		             $("#price1").removeAttr("readonly");
+		             $("#pricepersheet1").removeAttr("readonly");
+					  $("#pricepersheet1").removeAttr("readonly");
+					   $("#expirydate1").removeAttr("readonly");
+					   $("#quantitypersheet1").removeAttr("readonly");
+					   $("#schdrug1").removeAttr("readonly");
+					   $("#subcategory1").removeAttr("readonly");
+					   
+					   $('#dlpp1').removeAttr("readonly");
+			  	      //  $("#subcategory1").attr("readonly","true");
+			          //  $("#mfcompany1").attr("readonly","true");
+			          //  $("#quantity1").attr("readonly","true");
+						 $("#price1").attr("readonly","true");
+		               $("#dlprice1").attr("readonly","true");
+		               $("#quantity1").attr("readonly","true");
+			            
+
+		                $("#submit1").removeAttr("disabled");
+
+						$('#agencyname1').focus();
+					}
+				}
+			   }
+			   else{
+				   if(result.message!==null){alert(result.message);};
+				   $("#batchNo"+val+"").val("").focus();
+			   }
+			
+		 });
+		}
+		disableAjaxPopup();
+		}else{
+			alert("Please Select Branch");
+			$("#branchId1").focus();
+		}
+
+	
+}
+
+function clearAttributes(){
+	
+	
+	
+}
+ /***************************************************************************/
+ 
+	$(function() {
+		$( "#expirydate1" ).datepicker({
+			dateFormat: 'yy-mm-dd',
+			changeMonth: true,
+			changeYear: true
+		});
+	});
+
+function split(val) {
+   return val.split(/,\s*/);
+ }
+function extractLast(term) {
+	 return split(term).pop();
+ }
+
+$(document).ready(function() {
+	
+	/*$('#branchId1').change(function() {
+		  //alert($(this).text());
+		  alert($('#branchId1').text()+" branch selected");
+		});*/
+	
+	/*var chars = /[,\/\w]/i; // all valid characters /^[A-Za-z\s]+$/
+	$('input').keyup(function(e) {
+	  var value = this.value;
+	  var char = value[value.length-1];
+	  if (!chars.test(char)) {
+	    $(this).val(value.substring(0, value.length-1));
+	  }
+	});*/
+	
+//	var chars =/^[A-Za-z0-9\s]+$/;  all valid characters 
+	$('.names').keyup(function(e) {
+
+	           var letters = /^[A-Za-z0-9\s]+$/;
+	           var c=this.value;
+	            var v=c.charAt(c.length - 1);
+	            if(v==" " && c.length > 1 ){
+	                 if(c.charAt(c.length - 1)==" " && c.charAt(c.length - 2)==" "){
+	                	 var count=0;
+	                //	 var formatted=c;
+	                	 for (var i=0;i<c.length;i++){
+	     	                var d1=c.charAt(c.length - i+1);
+	     	              //  alert("1st"+d1);
+	     	                var d2=c.charAt(c.length - i+2);
+	     	              // alert("2nd"+d2);
+	     	                if(d1==" " && d2==" "){
+	     	                //	formatted = c.substring(0,i); 
+	     	                count+=1;
+	     	                 }
+	     	               }alert(count);
+	     	             //  alert("***"+c.substring(0, c.length - count)+"******");
+	     	              $(this).val(c.substring(0, c.length - count)); 
+	                 
+	                    return true;
+	                  }
+	             }else{
+	                 if(v==" " && c.length == 1 ){
+	                  c = c.substring(0, c.length - 1);
+	                  $(this).val(c.substring(0, c.length - 1)); 
+	                  
+	                  return false;
+	                   }
+	              }
+	           if(!c.match(letters)) 
+	          {
+	              if(c.length > 0){
+	           alert('Special characters not allowed');
+	              }
+	              
+	           $(this).val("");
+	          
+	            return true;  
+	           };
+	           return true;
+ 
+	});
+
+	var chars = /[,\/\w]/i; // all valid characters 
+	$('#batchNo1').keyup(function(e) {
+	  var value = this.value;
+	  var char = value[value.length-1];
+	  if(value.length==1 && char==" "){$(this).val(value.substring(0, value.length-1));};
+	  if (!chars.test(char)) {
+		  if(value.length > 0){
+	           alert('Special characters not allowed');
+	              }
+	              var count1=0;
+	              for (var i=0;i<value.length;i++){
+ 	                var d1=value.charAt(value.length - i);
+ 	           //     alert("d1**"+d1);
+ 	                if(!d1.match(chars)){
+ 	                count1+=1;
+ 	                 }
+ 	               }//alert(count1);
+	           
+	    $(this).val(value.substring(0, value.length-count1-1));
+	     if(value.substring(0, value.length-count1-1)==""){
+	    	 $(this).focus();
+	     }
+	    
+	  }else if(value[value.length-1]==" " && value[value.length-2]==" " && value.length>1){
+		  $(this).val(value.substring(0, value.length-1));
+	  }else{
+		  
+	  }
+	});
+	
+	
+	$('.double').keyup(function(e) {
+	 var value = this.value;
+	  var char = value[value.length-1];
+	     if(isNaN(value) || value == " "){
+	    	 for (var i=0;i<value.length;i++){
+	                var d=value.charAt(i);
+	                if(isNaN(d)  || d==" "){
+	                 value = value.substring(0,i); 
+	                 }
+	               }$(this).val(value);
+	   }else if(value[value.length-1]=="." && value[value.length-2]=="." && value.length>1){
+		  $(this).val(value.substring(0, value.length-1));
+	   };
+	  if(value.length==1 && char=="."){
+		  $(this).val(value.substring(0, value.length-1));
+	  }
+	  else if(value[value.length-1]==" " && value.length>0){
+		  $(this).val(value.substring(0, value.length-1));
+	  }
+	  else if(value[value.length-1]==" " && value[value.length-2]==" " && value.length>1){
+		  $(this).val(value.substring(0, value.length-1));
+	  }
+	 });
+	
+	
+	
+	$('.integer').keyup(function(e) {
+		var value = this.value;
+		var char = value[value.length-1];
+		if(char=="."){$(this).val(value.substring(0, value.length-1));}
+		else if(char==" "){$(this).val(value.substring(0, value.length-1));}
+		 if(isNaN(value) || value == " "){
+	    	 for (var i=0;i<value.length;i++){
+	                var d=value.charAt(i);
+	                if(isNaN(d) || d==" "){
+	                 value = value.substring(0,i); 
+	                 }
+	               }$(this).val(value);
+		 }
+	});
+	
+	//trimming the input fields
+   $('#ProductEntry').submit(function(){
+	   
+	  
+   	$("#pricepersheet1").val(Math.round($("#pricepersheet1").val() * 100) / 100);
+   	 $("#dlpp1").val(Math.round($("#dlpp1").val() * 100) / 100);
+        $("#dlprice1").val(Math.round($("#dlprice1").val() * 100) / 100);
+         $("#price1").val(Math.round($("#price1").val() * 100) / 100);	
+       $(this).find('input:text').each(function(){
+       //	alert($.trim($(this).val()));
+             $(this).val($.trim($(this).val()));
+       });
+ });
+	
+	 $( "#agencyid1" ).val("");
+	 $( "#agencyname1" ).val("");
+	 $( "#agencyname1" ).removeAttr("readonly");
+	 $("#pname1").removeAttr("readonly");
+	 $("#noofsheets1").removeAttr("readonly");
+	 $("#quantitypersheet1").removeAttr("readonly");
+	 $("#pricepersheet1").removeAttr("readonly");
+	 $("#dlpp1").removeAttr("readonly");
+	 $("#expirydate1").removeAttr("readonly");
+	 $("#mfcompany1").val("").removeAttr("readonly");
+	 $("#schdrug1").val("").removeAttr("readonly");
+	 $("#subcategory1").val("").removeAttr("readonly");
+	
+    $("#expirydate1").val("");
+	 $("#pname1").val("");
+    $("#noofsheets1").val("");
+    $("#quantitypersheet1").val("");
+    $("#pricepersheet1").val("");
+
+    $("#pid1").val("");
+    $("#batchNo1").val("");
+    $("#dlpp1").val("");
+    $( "#piid1" ).val("");
+    $("#branchId1").focus();
+  /*  $("#dlprice1").val("").attr("readonly","true");
+    $("#quantity1").val("").attr("readonly","true");
+    $("#price1").val("").attr("readonly","true");*/
+
+	 $('#tab1').show();
+     $('#tab2').show();
+	 $('#tab3').show();
+	 $('#tab4').show();
+	 $('#tab5').show();
+	// $('#tab6').show();
+	 $("#mfcompany1").removeAttr("readonly");
+    $("#schdrug1").removeAttr("readonly");
+    $("#subcategory1").removeAttr("readonly");
+	 $("#price1").attr("readonly","true");
+    $("#dlprice1").attr("readonly","true");
+    $("#quantity1").attr("readonly","true");
+    $("#update1").attr("readonly", "true");
+    $("#update1").css("display", "none");
+    
+    $("#submit1").css("display", "block");
+	
+	$('#subcategory1').change(function() {
+		//alert($("#subcategory1 :selected").text());
+	
+	    if($("#subcategory1 :selected").text()!="TABLET"){
+	    	$('#tab1').hide();
+	    	$('#tab2').hide();
+	    	$('#tab3').hide();
+	    	$('#tab4').hide();
+	    	 $("#price1").removeAttr("readonly");
+	         $("#dlprice1").removeAttr("readonly");
+	         $("#quantity1").removeAttr("readonly");
+	         
+	         $('#noofsheets1').attr("readonly", "true");
+			  $("#pricepersheet1").attr("readonly", "true");
+             $('#dlpp1').attr("readonly", "true");
+             $('#quantitypersheet1').attr("readonly", "true");
+	         
+	    }else{
+	         $('#noofsheets1').removeAttr("readonly");
+			  $("#pricepersheet1").removeAttr("readonly");
+            $('#dlpp1').removeAttr("readonly");
+            $('#quantitypersheet1').removeAttr("readonly");
+            
+	    	 $("#price1").attr("readonly","true");
+	         $("#dlprice1").attr("readonly","true");
+	         $("#quantity1").attr("readonly","true");
+	         
+	    	$('#tab1').show();
+	    	$('#tab2').show();
+	    	$('#tab3').show();
+	    	$('#tab4').show();
+	    	
+	    }
+	  });
+	/*if($('#subcategory1 option:selected').text()!="TABLET"){
+		$('#tab1').hide();
+   	$('#tab2').hide();
+   	$('#tab3').hide();
+   	$('#tab4').hide();
+	}else{
+		$('#tab1').show();
+   	$('#tab2').show();
+   	$('#tab3').show();
+   	$('#tab4').show();
+	}
+	*/
+/*	if(document.getElementById('Medical').checked){
+		$('.general').hide(); $('.Medical').show();
+		
+	}else{
+		$('.Medical').hide();$('.general').show();
+	}
+*/	
+
+
+
+   var cache = {};
+   
+  
+    
+   $( "#agencyname1" ).autocomplete({
+
+
+   source: function (request, response) {
+     var term          = request.term.toLowerCase(),
+           element       = this.element,
+           cache         = this.element.data('autocompleteCache') || {},
+           foundInCache  = false;
+
+       $.each(cache, function(key, data){//3
+         if (term.indexOf(key) === 0 && data.length > 0) {//4
+           response(data);
+           foundInCache = true;
+           return;
+         }//4
+       });//3
+
+         if (foundInCache) return;
+
+
+   		var msg={"displaymsg":"Trying to display ajencies ... Please Wait...."};
+   			loadAjaxPopup(msg); 	
+   	
+          
+               $.ajax({//6
+             url: '${pageContext. request. contextPath}/get_medical_agency_list.html',
+             dataType: "json",
+             data: request,
+             success: function(data) {//5
+                 cache[term] = data;
+                 element.data('autocompleteCache', cache);
+                 response(data);
+             }//5
+         });//6
+
+           disableAjaxPopup();
+       },
+       
+    		 select: function( event, ui ) {
+    			 
+   			 selectedObj = ui.item;
+   			 //alert("selected object=" + selectedObj.value);
+               $( "#tags" ).val( ui.item.label );
+               
+               $( "#agencyname1" ).val( ui.item.value );
+               myArray= ui.item.value.split("-");
+               $( "#agencyid1" ).val( myArray[1] );
+               $( "#agencyname1" ).val( myArray[0] );
+              // alert(myArray);
+               return false;
+           },
+       focus: function( event, ui ) {
+               $( "#tags" ).val( ui.item.label );
+              // alert(ui.item.label);
+               return false;
+           },
+       change: function(event, ui) {
+           if (!ui.item) {
+               $("#tags").val("");
+              $("#agencyname1").val("");
+               $("#agencyid1").val("");
+           }
+       }
+   	});
+
+$( "#pname1" ).autocomplete({
+	//source: '${pageContext. request. contextPath}/get_medical_products_list.html',
+	  source: function (request, response) {
+     var term          = request.term.toLowerCase(),
+           element       = this.element,
+           cache         = this.element.data('autocompleteCache') || {},
+           foundInCache  = false;
+
+       $.each(cache, function(key, data){//3
+    	  
+       
+         if (term.indexOf(key) === 0 && data.length > 0) {//4
+           response(data);
+           foundInCache = true;
+           return;
+         }//4
+       });//3
+
+         if (foundInCache) return;
+		  var msg={"displaymsg":"Trying to display products ... Please Wait...."};
+				loadAjaxPopup(msg);   
+	  
+       
+        	  $.ajax({//6
+                  url: '${pageContext. request. contextPath}/get_medical_products_list.html?type=7',
+                  dataType: "json",
+                  data: request,
+                  success: function(data) {//5
+                      cache[term] = data;
+                      element.data('autocompleteCache', cache);
+                      response(data);
+                  }//5
+              });//6
+          disableAjaxPopup();
+      },
+	
+	
+   select: function( event, ui ) {
+            $( "#tags" ).val( ui.item.label );
+            $( "#pname1" ).val( ui.item.value );
+            myArray= ui.item.value.split("-");
+            $( "#pid1" ).val( myArray[2] );
+            $( "#pname1" ).val( myArray[0] );
+          // alert(myArray);
+            return false;
+        },
+     focus: function( event, ui ) {
+            $( "#tags" ).val( ui.item.label );
+           // alert(ui.item.label);
+            return false;
+        },
+     change: function(event, ui) {
+        if (!ui.item) {
+       	// alert(!ui.item);
+       	 $("#tags").val("");
+            $("#pid1").val("");
+            $("#mfcompany1").removeAttr("readonly");
+            $("#schdrug1").removeAttr("readonly");
+            $("#subcategory1").removeAttr("readonly");
+            $("#mfcompany1").val("");
+            $("#schdrug1").val("");
+            $("#subcategory1").val("");
+         }
+        else{
+       	 getProductDetails($.trim(myArray[2]));
+            $("#mfcompany1").attr("readonly", "true");
+            $("#schdrug1").attr("readonly", "true");
+            $("#subcategory1").attr("readonly", "true");
+            
+            
+        }
+    }
+    });
+    
+    
+
+
+/***********************************General**********************************/  
+
+
+});
+
+$(function() {
+	$( "#expirydate0" ).datepicker({
+		dateFormat: 'yy-mm-dd',
+		changeMonth: true,
+		changeYear: true
+	});
+});
+
+
+
+
+	
+//Math.round(num * 100) / 100
+function getSheetPrice(val){
+	
+	if($('#piid1').val()!=""){
+		var pr=$('#price1').val();
+		var qps=$('#quantitypersheet1').val();
+		var nos=$('#noofsheets1').val();
+		var dlprice=$('#dlprice1').val();
+		//alert($('#piid1').val());
+		$('#pricepersheet1').val(Math.round((qps*pr) * 100) / 100);
+		$('#quantity1').val(Math.round((nos*qps) * 100) / 100);
+		$('#dlpp1').val(Math.round((dlprice*qps) * 100) / 100);
+	}
+}
+
+function getPrice(val){
+	//noofsheets,quantitypersheet,pricepersheet,quantity,price
+	var nos=$('#noofsheets1').val();
+	var qps=$('#quantitypersheet1').val();
+	var pps=$('#pricepersheet1').val();
+	var pr=$('#price1').val();
+	var piid=$('#piid1').val();
+	var dlprice=$('#dlprice1').val();
+	if(nos!="" && qps!=""){
+		$('#quantity1').val(Math.round((nos*qps) * 100) / 100);
+		if(pps!="" && piid==""){
+			$('#price1').val(Math.round((pps/qps) * 100) / 100);
+		}else if(piid!=""){
+	//	alert(piid);
+			$('#pricepersheet1').val(Math.round((qps*pr) * 100) / 100);
+			$('#quantity1').val(Math.round((nos*qps) * 100) / 100);
+			$('#dlpp1').val(Math.round((dlprice*qps) * 100) / 100);
+		}
+	}
+}
+
+function getDlPrice(val){
+	var qps=$('#quantitypersheet1').val();
+	var dlpp=$('#dlpp1').val();
+	if(qps!="" && dlpp!=""){
+		$('#dlprice1').val(dlpp/qps);
+	}
+}
+
+
+</script>
+</head>
+<body>
+
+<jsp:include page="/WEB-INF/views/general/ajaxpopup.jsp"></jsp:include>
+	<div class="ProductStockEntry" style="float: left;">
+		<h3>Medical Product Stock Entry Form</h3>
+		<div class="Medical">
+			<div class="wrapper">
+				<form:form method="POST"
+					action="javascript:addProduct(1,${createdby});"
+					onsubmit="return doFormValidate();" commandName="command"
+					id="ProductEntry" class="ProductEntry1">
+
+
+					<div id="msg">${msg}</div>
+
+					<form:hidden path="id" id="piid1" 
+						/>
+
+					<form:input path="productBean.id" id="pid1"
+						readonly="true" hidden="true" placeholder="Product id" />
+
+
+					<form:input path="productBean.categoryBean.id" id="category1"
+						 value="7" readonly="true" hidden="true" />
+
+					<%-- <td><form:label path="shopid" >Shop Id</form:label></td> 
+					<form:input path="createdBy" id="shopid" value="${createdby}"
+						readonly="true" hidden="true"/>--%>
+
+
+					<%-- <td><form:label path="agencyid" >Agency Id</form:label></td> --%>
+					<form:input path="agencyBean.id" id="agencyid1" value="${createdby}"
+						readonly="true" hidden="true" placeholder="agency id" />
+
+					<div class="valueBoxes">
+						<div id="tab6">
+							<label><form:label path="">Organization</form:label></label>
+							<form:input path="" value="${organization}"
+								readonly="true" />
+						</div>
+						<div>
+
+							<label><form:label path="branchBean.id">Branch</form:label></label>
+							<form:select path="branchBean.id" id="branchId1">
+								<form:option value="${branchId}">${branch}</form:option>
+								<form:options items="${branches}" />
+							</form:select>
+						</div>
+
+						<div>
+							<label><form:label path="batchNo">Batch No</form:label></label>
+							<form:input path="batchNo" id="batchNo1" value=""
+								onblur="validateBatchNo(1,${createdby})" />
+						</div>
+						<div id="tab6">
+							<label><form:label path="agencyBean.agencyName">Agency Name</form:label></label>
+							<form:input path="agencyBean.agencyName" id="agencyname1"
+								class="names" value="" readonly="readonly" data-value="" />
+						</div>
+
+						<div>
+							<label><form:label path="productBean.name">Product Name</form:label></label>
+							<form:input path="productBean.name" id="pname1" value=""
+								class="names" />
+						</div>
+
+
+
+
+						<div>
+
+							<label><form:label path="productBean.subCategoryBean.id">Category</form:label></label>
+							<form:select path="productBean.subCategoryBean.id"
+								id="subcategory1">
+								<form:options items="${categories}" />
+							</form:select>
+						</div>
+
+						<div>
+							<label><form:label path="productBean.mFCompanay">MFC</form:label></label>
+							<form:input path="productBean.mFCompanay" id="mfcompany1"
+								value="" class="names" />
+						</div>
+
+						<div>
+							<label><form:label path="productBean.schDrug">SCH</form:label></label>
+							<form:select path="productBean.schDrug" id="schdrug1">
+								<form:option value="Y">Y</form:option>
+								<form:option value="N">N</form:option>
+							</form:select>
+						</div>
+
+
+						<div id="tab1">
+							<label><form:label path="noOfstrips">Strips</form:label></label>
+							<form:input path="noOfstrips" class="integer" id="noofsheets1"
+								value="" onchange="getPrice(1);" onblur="getSheetPrice(1);" />
+						</div>
+						<div id="tab2">
+							<label><form:label path="quantityPerStrip">Quantity Per Strip</form:label></label>
+							<form:input path="quantityPerStrip" class="integer"
+								id="quantitypersheet1" value="" onchange="getSheetPrice(1);" />
+						</div>
+						<div id="tab3">
+							<style>
+.placeholder {
+	font-size: 14px;
+	left: 5px;
+	position: relative;
+	margin-right: -20px;
+}
+
+#pricepersheet1,#price1,#dlpp1,#dlprice1 {
+	padding-left: 20px;
+	width: 125px;
+}
+</style>
+							<label><form:label path="pricePerStrip">Price Per Strip</form:label></label>
+							<span class="placeholder">Rs.</span>
+							<form:input path="pricePerStrip" id="pricepersheet1"
+								class="double" value="" onchange="getPrice(1);" />
+
+						</div>
+
+
+						<div id="tab3">
+							<label><form:label path="price">Price</form:label></label> <span
+								class="placeholder">Rs.</span>
+							<form:input path="price" id="price1" value="" class="double"
+								readonly="true" hidden="" onfocus="" />
+
+						</div>
+
+						<div id="tab4">
+							<label><form:label path="dlPricePerstrip">DL Strip Price</form:label></label>
+							<span class="placeholder">Rs.</span>
+							<form:input path="dlPricePerstrip" id="dlpp1" class="double"
+								value="" hidden="" onchange="getDlPrice(1);" />
+
+						</div>
+
+						<div>
+							<label><form:label path="dlPrice">Dealer Price</form:label></label>
+							<span class="placeholder">Rs.</span>
+							<form:input path="dlPrice" id="dlprice1" value="" class="double"
+								readonly="true" hidden="" onfocus="" />
+						</div>
+
+						<div>
+							<label><form:label path="quantity">Quantity</form:label></label>
+							<form:input path="quantity" class="integer" id="quantity1"
+								value="" readonly="" hidden="" />
+						</div>
+
+						<div>
+							<label><form:label path="expiryDate">Expiry Date</form:label></label>
+							<form:input path="expiryDate" id="expirydate1" value="" hidden=""
+								maxlength="0" placeholder="YYYY-MM-DD" />
+						</div>
+					</div>
+					<div class=" ">
+						<input type="submit" id="submit1" value="SAVE" />
+						<input type="submit" id="update1"  value="Update" />
+						<%-- <input type="button" value="Register" onclick="addAgency();"/> --%>
+					</div>
+
+
+
+
+
+
+
+				</form:form>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>

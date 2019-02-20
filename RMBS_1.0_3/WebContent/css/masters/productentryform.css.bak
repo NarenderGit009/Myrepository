@@ -1,0 +1,133 @@
+.ProductStockEntry{
+
+}
+.ProductStockEntry {
+    position: relative;
+    background-color: #EFF0F0;
+    border: 1px solid  #3C873C;
+    width: 350px;
+    padding: 5px;
+    font-family:calibri;
+    font-size: 15px;
+    color: #736F69;
+    border-radius: 3px;
+	float: right;
+	
+}
+h3{
+	font-size: 17px;
+	font-weight: bold;
+	background: url("../../images/green.png") repeat scroll 0 0 transparent;
+	color: #FFF;
+	height: 20px;
+	padding-left: 10px;
+	
+}
+.wrapper div {
+    padding-bottom:6px;
+}
+.wrapper label {
+    width:120px;
+    
+    display: inline-block;
+}
+.wrapper input[type=text] {
+    border: 1px solid #A0A0A0;
+    width: 140px;
+    padding: 0 8px 0 6px;
+    height:20px;
+    font-family:calibri;
+    font-size: 15px;
+    border-radius: 5px 5px 5px 5px;
+}
+.wrapper input[type=password] {
+    border: 1px solid #A0A0A0;
+    width: 140px;
+    padding: 0 8px 0 6px;
+    height:20px;
+    font-family:calibri;
+    font-size: 15px;
+    border-radius: 5px 5px 5px 5px;
+}
+.wrapper textarea {
+    border: 1px solid #A0A0A0;
+    padding: 0 8px 0 6px;
+    width: 180px;
+    font-family:calibri;
+    border-radius: 5px 5px 5px 5px;
+  
+}
+.wrapper select{
+  border: 1px solid #A0A0A0;
+  border-radius: 5px 5px 5px 5px;
+}
+.wrapper .required {
+    position: relative;
+    display: inline-block;
+    color: #E3001B;
+    top: 1px;
+    width: 10px;
+    vertical-align: top;
+    right: 10px;
+
+}
+/*.wrapper input[type=submit] {
+    border: 0;
+    background-color: #888888;
+    border-radius: 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 5px;
+}*/
+.wrapper .submit {
+    text-align: right;
+    width: 350px;
+}
+
+	
+	
+@media (max-width:750px) {
+	#container{
+  background-color: #3C873C;
+       border: 1px solid #3C873C;
+	}
+    .ProductStockEntry {
+         width: 95%;
+		 position:static;
+    }
+    .wrapper label {
+        width:100%;
+        display: block;
+    }
+    .wrapper textarea {
+        width:80%;
+		height:10%;
+		color: red;
+    }
+    .wrapper .submit {
+        width: 80%;
+    }
+	.wrapper .required {
+    position: static;
+ 
+}
+#ui-datepicker-div{
+width: 80%;
+ background-color:lightgreen;
+ font-size: 60%;
+}
+}
+@media (min-width:750px) {
+#ui-datepicker-div{
+width:  200px;
+ background-color:lightgreen;
+ font-size: 14px;
+}
+}
+.ui-autocomplete { max-height: 200px; overflow-y: auto; overflow-x: hidden;width: 100px; border: 4px solid #aaa; }  
+
+.ui-datepicker {
+   background: #333;
+   border: 1px solid #555;
+   color: #EEE;
+ }

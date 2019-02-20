@@ -1,0 +1,62 @@
+package com.relyits.rmbs.beans_preparation.product;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import com.relyits.model.Product;
+import com.relyits.model.ProductInventory;
+import com.relyits.rmbs.beans.product.ProductInventoryBean;
+import com.relyits.rmbs.beans_preparation.registration.AgencyBeanPreparation;
+import com.relyits.rmbs.beans_preparation.registration.BranchBeanPreparation;
+import com.relyits.rmbs.beans_preparation.resources.AddressBeanPreparation;
+import com.relyits.rmbs.model.product.ProductInventoryModel;
+
+
+
+public class ProductInventoryBeanPreparation {
+	
+	private static ProductInventoryBean productInventoryBean=null;
+	
+	@SuppressWarnings("unused")
+	private static ProductInventoryBean prepareProductInventoryBean(ProductInventoryModel productInventoryModel){
+		productInventoryBean=new ProductInventoryBean();
+		productInventoryBean.setBatchNo(productInventoryModel.getBatchNo());
+		productInventoryBean.setId(productInventoryModel.getId());
+		productInventoryBean.setPrice(productInventoryModel.getPrice());
+		productInventoryBean.setDlPrice(productInventoryModel.getDlPrice());
+		productInventoryBean.setQuantity(productInventoryModel.getQuantity());
+		productInventoryBean.setVat(productInventoryModel.getVat());
+		productInventoryBean.setPwVat(productInventoryModel.getPwVat());
+		productInventoryBean.setVatPrice(productInventoryModel.getVatPrice());
+		productInventoryBean.setExpiryDate(""+productInventoryModel.getExpiryDate()+"");
+		productInventoryBean.setProductBean(ProductBeanPreparation.prepareProductBean(productInventoryModel.getProductModel()));
+        productInventoryBean.setCreatedBy(productInventoryModel.getCreatedBy());
+        productInventoryBean.setBranchBean(BranchBeanPreparation.prepareBranchBean(productInventoryModel.getBranchModel()));
+        productInventoryBean.setAgencyBean(AgencyBeanPreparation.prepareAgencyBean(productInventoryModel.getAgencyModel()));
+        productInventoryBean.setCreatorRoleBean(AddressBeanPreparation.prepareRoleBean(productInventoryModel.getCreatorRoleModel()));
+        productInventoryBean.setCreatedDate(productInventoryModel.getCreatedDate());
+        productInventoryBean.setUpdatedDate(productInventoryModel.getUpdatedDate());
+        
+        
+		
+		return productInventoryBean;
+	}
+
+
+/*
+	private Product prepareProductModel(ProductEntryBean productEntryBean){
+		Product product = new Product();
+		product.setCategory(productEntryBean.getCategory());
+		product.setMfcompany(productEntryBean.getMfcompany());
+		product.setShopid(productEntryBean.getShopid());
+		product.setAgencyid(productEntryBean.getAgencyid());
+		product.setPcode(productEntryBean.getPcode());
+		product.setPname(productEntryBean.getPname());
+		product.setSchdrug(productEntryBean.getSchdrug());
+		product.setSubcategory(productEntryBean.getSubcategory());
+		product.setPid(productEntryBean.getPid());
+		return product;
+	}
+*/
+}

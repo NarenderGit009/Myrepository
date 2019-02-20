@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+
+    <definition name="organizationLoginSucces" extends="base.definition">
+        <put-attribute name="title" value="Organization Dashboard"></put-attribute>
+        <put-attribute name="notificatonContent" value="/WEB-INF/views/notifications/latestNotification.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/organization/activeOrganization/activeOrganization.jsp"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/organization/activeOrganization/activeOrganizationMenu.jsp"></put-attribute>
+    </definition>
+
+     <definition name="organizationInactiveLogin" extends="base.definition">
+        <put-attribute name="title" value="Inactive Organization Dashboard"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/organization/inactiveOrganization/inactiveOrganization.jsp"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/organization/inactiveOrganization/inactiveOrganizationMenu.jsp"></put-attribute>
+    </definition>
+         <definition name="inactiveOrganizationPwdChange" extends="base.definition">
+        <put-attribute name="title" value="SETTINGS"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/organization/inactiveOrganization/inactiveOrganizationMenu.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/settings/changePassword.jsp"></put-attribute>
+    </definition>
+    
+        <definition name="OrganizationsList" extends="base.definition">
+       <put-attribute name="title" value="Owners List"></put-attribute>
+       <put-attribute name="menu" value="/WEB-INF/views/organization/activeOrganization/activeOrganizationMenu.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/organization/organizationsList.jsp"></put-attribute>
+        
+    </definition>
+    
+        
+     <definition name="accountRequetsbyOwner" extends="ajax.defination">
+      <put-attribute name="title" value="Users Requests"></put-attribute>
+       <put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/organization/organizationsList.jsp"></put-attribute>
+    </definition>
+    
+    
+    <!-- Notifications of Admin -->
+    <definition name="messageForm" extends="base.definition">
+           <put-attribute name="title" value="Message Form"></put-attribute>
+           <put-attribute name="menu" value="/WEB-INF/views/organization/inactiveOrganization/inactiveOrganizationMenu.jsp"></put-attribute>
+       	   <put-attribute name="body" value="/WEB-INF/views/notifications/messageForm.jsp"></put-attribute>
+       </definition>
+       <definition name="openMesssageForm" extends="ajax.defination">
+		<put-attribute name="menu" value=""></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/notifications/messageForm.jsp"></put-attribute>
+	</definition>
+	<definition name="messageNotificationsList" extends="ajax.defination">  
+   		       <put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/notifications/messageNotificationsList.jsp"></put-attribute>
+    </definition>
+       
+</tiles-definitions>

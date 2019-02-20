@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<context:component-scan base-package="com.relyits.*">
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.LoginController" />
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.OrganizationController" />
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.BranchController" />
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.NotificationsController" />
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.RegistrationController" />
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.ValidationController" />
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.DataProcessingController" />
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.HelpController" />
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.OutletController" />
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.SettingsController" />
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.ConsumerController" />
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.AgencyController" />
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.DoctorController" />
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.ProductController" />
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.PurchaseOrderController" />
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.SalesOrderController" />
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.SalesReturnOrderController" />
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.ReportsController" />
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.RevenueController" />
+		<context:include-filter type="annotation"
+			expression="com.relyits.rmbs.controller.PurchaseReturnOrderController" />	
+		<!-- <context:include-filter type="annotation" expression="com.relyits.controller.AjaxCallsController"/> 
+			<context:include-filter type="annotation" expression="com.relyits.controller.EmployeeController"/> -->
+	</context:component-scan>
+	<!-- <context:component-scan base-package="de.osc.*"> <context:exclude-filter 
+		type="regex" expression="de.osc.applicantdata.web.controller.*.*" /> <context:exclude-filter 
+		type="regex" expression="de.osc.commons.web.controller.*.*" /> </context:component-scan> -->
+
+
+
+	<bean id="jacksonMessageConverter"
+		class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+	<mvc:annotation-driven />
+	<tx:annotation-driven transaction-manager="hibernateTransactionManager" />
+
+
+	<bean id="propertyConfigurer"
+		class="com.relyits.rmbs.utilities.ExposablePropertyPaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>WEB-INF/properties/database.properties</value>
+				<value>WEB-INF/properties/message.properties</value>
+				<value>WEB-INF/properties/role.properties</value>
+				<value>WEB-INF/properties/status.properties</value>
+				<value>WEB-INF/properties/category.properties</value>
+				<value>WEB-INF/properties/subCategory.properties</value>
+				<value>WEB-INF/properties/revenue.properties</value>
+				<value>WEB-INF/properties/timePeriod.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+		id="propSource2">
+		<property name="locations">
+			<list>
+				<value>WEB-INF/properties/database.properties</value>
+				<value>WEB-INF/properties/message.properties</value>
+				<value>WEB-INF/properties/role.properties</value>
+				<value>WEB-INF/properties/status.properties</value>
+				<value>WEB-INF/properties/category.properties</value>
+				<value>WEB-INF/properties/subCategory.properties</value>
+				<value>WEB-INF/properties/revenue.properties</value>
+				<value>WEB-INF/properties/timePeriod.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="ajaxResolver" class="org.springframework.js.ajax.AjaxUrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.js.ajax.tiles2.AjaxTilesView" />
+	</bean>
+
+	<bean id="jspResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/views/masters/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+
+<bean id="multipartResolver"
+	class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="1000000000" />
+		<!-- <property name="uploadTempDir" ref="uploadDirResource" /> -->
+	</bean>
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass">
+			<value>
+				org.springframework.web.servlet.view.tiles2.TilesView
+			</value>
+		</property>
+	</bean>
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/config/tiles-baselayout.xml</value>
+				<value>/WEB-INF/config/tiles-login.xml</value>
+				<value>/WEB-INF/config/tiles-product.xml</value>
+				<value>/WEB-INF/config/tiles-product-lists.xml</value>
+				<value>/WEB-INF/config/tiles-product-purchase.xml</value>
+				<value>/WEB-INF/config/tiles-product-sales.xml</value>
+				<value>/WEB-INF/config/tiles-doctor.xml</value>
+				<value>/WEB-INF/config/tiles-agency.xml</value>
+				<value>/WEB-INF/config/tiles-admin.xml</value>
+				<value>/WEB-INF/config/tiles-organization.xml</value>
+				<value>/WEB-INF/config/tiles-branch.xml</value>
+				<value>/WEB-INF/config/tiles-outlet.xml</value>
+				<value>/WEB-INF/config/tiles-error.xml</value>
+				<value>/WEB-INF/config/tiles-reports.xml</value>
+				<value>/WEB-INF/config/tiles-revenue.xml</value>
+				
+			</list>
+		</property>
+	</bean>
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${database.driver}" />
+		<property name="url" value="${database.url}" />
+		<property name="username" value="${database.user}" />
+		<property name="password" value="${database.password}" />
+	</bean>
+	<bean id="propertyUtils" class="com.relyits.rmbs.utilities.PropertyUtilities">
+
+	</bean>
+
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="annotatedClasses">
+			<list>
+				
+
+
+				<value>com.relyits.rmbs.model.registration.OrganizationModel</value>
+				<value>com.relyits.rmbs.model.registration.BranchModel</value>
+				<value>com.relyits.rmbs.model.registration.OutletModel</value>
+				<value>com.relyits.rmbs.model.registration.AgencyModel</value>
+				<value>com.relyits.rmbs.model.registration.DoctorModel</value>
+				<value>com.relyits.rmbs.model.registration.ResourceModel</value>
+				<value>com.relyits.rmbs.model.product.ProductModel</value>
+				<value>com.relyits.rmbs.model.product.ProductInventoryModel</value>
+				<value>com.relyits.rmbs.model.product.ProductLogModel</value>
+				<value>com.relyits.rmbs.model.product.ProductDamageModel</value>
+				<value>com.relyits.rmbs.model.sales.SalesOrderModel</value>
+				<value>com.relyits.rmbs.model.sales.SalesReturnOrderModel</value>
+				<value>com.relyits.rmbs.model.sales.SalesLineItemsModel</value>
+				<value>com.relyits.rmbs.model.sales.SalesReturnLineItemsModel
+				</value>
+				<value>com.relyits.rmbs.model.purchase.PurchaseOrderModel</value>
+				<value>com.relyits.rmbs.model.purchase.PurchaseReturnOrderModel
+				</value>
+				<value>com.relyits.rmbs.model.purchase.PurchaseLineItemsModel
+				</value>
+				<value>com.relyits.rmbs.model.purchase.PurchaseReturnLineItemsModel
+				</value>
+				<value>com.relyits.rmbs.model.menu.MenuModel</value>
+				<value>com.relyits.rmbs.model.menu.ChildMenuModel</value>
+				<value>com.relyits.rmbs.model.menu.ParentMenuModel</value>
+				<value>com.relyits.rmbs.model.consumer.CustomerModel</value>
+				<value>com.relyits.rmbs.model.consumer.PatientModel</value>
+				<value>com.relyits.rmbs.model.notifications.MailNotificationsModel
+				</value>
+				<value>com.relyits.rmbs.model.notifications.MessageNotificationsModel
+				</value>
+				<value>com.relyits.rmbs.model.notifications.OfferNotificationsModel
+				</value>
+				<value>com.relyits.rmbs.model.notifications.ProductNotificationsModel
+				</value>
+				<value>com.relyits.rmbs.model.notifications.RegistrationNotificationsModel
+				</value>
+				<value>com.relyits.rmbs.model.notifications.RevenueNotificationsModel
+				</value>
+				<value>com.relyits.rmbs.model.refference.AddressModel</value>
+				<value>com.relyits.rmbs.model.refference.CategoryModel</value>
+				<value>com.relyits.rmbs.model.refference.ReasonModel</value>
+				<value>com.relyits.rmbs.model.refference.RoleModel</value>
+				<value>com.relyits.rmbs.model.refference.SubCategoryModel</value>
+				<value>com.relyits.rmbs.model.refference.StatusModel</value>
+
+
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="hibernateTransactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+</beans>

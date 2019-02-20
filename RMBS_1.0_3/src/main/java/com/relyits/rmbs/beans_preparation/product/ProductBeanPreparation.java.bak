@@ -1,0 +1,72 @@
+package com.relyits.rmbs.beans_preparation.product;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.relyits.bean.AgencyRegisterBean;
+import com.relyits.bean.DoctorRegistrationBean;
+import com.relyits.bean.ProductEntryBean;
+import com.relyits.model.AgencyRegister;
+import com.relyits.model.Doctor;
+import com.relyits.model.ProductInventory;
+import com.relyits.rmbs.beans.product.ProductBean;
+import com.relyits.rmbs.beans.product.ProductInventoryBean;
+import com.relyits.rmbs.beans.registration.AgencyBean;
+import com.relyits.rmbs.beans.registration.BranchBean;
+import com.relyits.rmbs.beans.registration.DoctorBean;
+import com.relyits.rmbs.beans.registration.OrganizationBean;
+import com.relyits.rmbs.beans.registration.OutletBean;
+import com.relyits.rmbs.beans.registration.ResourceBean;
+import com.relyits.rmbs.beans.resources.AddressBean;
+import com.relyits.rmbs.beans.resources.CategoryBean;
+import com.relyits.rmbs.beans.resources.RoleBean;
+import com.relyits.rmbs.beans.resources.StatusBean;
+import com.relyits.rmbs.beans.resources.SubCategoryBean;
+import com.relyits.rmbs.beans.session.UserSessionBean;
+import com.relyits.rmbs.beans_preparation.resources.AddressBeanPreparation;
+import com.relyits.rmbs.model.product.ProductModel;
+import com.relyits.rmbs.model.registration.OrganizationModel;
+
+
+public class ProductBeanPreparation {
+	
+
+	
+	private static UserSessionBean userSessionBean=null;
+	private static OrganizationBean organizationBean=null;
+	private static OutletBean outletBean=null;
+	private static BranchBean branchBean=null;
+	private static AgencyBean agencyBean=null;
+	private static DoctorBean doctorBean=null;
+	private static ResourceBean resourceBean=null;
+	
+
+	private static AddressBean addressBean=null;
+	private static StatusBean accountStatusBean=null;
+	private static StatusBean loginStatusBean=null;
+	private static RoleBean roleBean=null;
+	private static RoleBean creatorRoleBean=null;
+	private static CategoryBean categoryBean=null;
+	private static SubCategoryBean subCategoryBean=null;
+	
+	private static ProductBean productBean=null;
+	private static ProductInventoryBean productInventoryBean=null;
+	
+	
+	
+
+	
+	public static ProductBean prepareProductBean(ProductModel productModel){
+			productBean=new ProductBean();
+			productBean.setName(productModel.getName());
+			productBean.setmFCompanay(productModel.getmFCompanay());
+			productBean.setSchDrug(productModel.getSchDrug());
+			productBean.setSubCategoryBean(AddressBeanPreparation.prepareSubCategoryBean(productModel.getSubCategoryModel()));
+			productBean.setId(productModel.getId());
+			productBean.setCategoryBean(AddressBeanPreparation.prepareCategoryBean(productModel.getCategoryModel()));
+		
+		    
+				return productBean;
+		}
+
+}

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+   
+    <definition name="openMedicalProductEntryForm" extends="base.definition">
+        <put-attribute name="title" value="Medical Product Form"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/user/menu.jsp"></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/medical/medicalForm.jsp"></put-attribute>
+    </definition>
+    
+     <definition name="openGeneralProductEntryForm" extends="base.definition">
+        <put-attribute name="title" value="General Product Form"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/user/menu.jsp"></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/general/generalForm.jsp"></put-attribute>
+    </definition>   
+    
+    <definition name="reOpenMedicalProductEntryForm" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/medical/medicalForm.jsp"></put-attribute>
+    </definition>
+    
+        <definition name="reOpenGeneralProductEntryForm" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/general/generalForm.jsp"></put-attribute>
+    </definition>
+    
+    <!-- Organization Views -->
+    
+    <definition name="openMedicalProductEntryFormByOrganization" extends="base.definition">
+        <put-attribute name="title" value="Medical Product Entry Form"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/organization/activeOrganization/activeOrganizationMenu.jsp"></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/medical/medicalProductForm.jsp"></put-attribute>
+    </definition>
+    
+        <definition name="openGeneralProductEntryFormByOrganization" extends="base.definition">
+        <put-attribute name="title" value="General Product Entry Form"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/organization/activeOrganization/activeOrganizationMenu.jsp"></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/general/generalProductForm.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="reOpenMedicalProductEntryFormByOrganization" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/medical/medicalProductForm.jsp"></put-attribute>
+    </definition>
+    
+        <definition name="reOpenGeneralProductEntryFormByOrganization" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/general/generalProductForm.jsp"></put-attribute>
+    </definition>
+    <!-- End Organization Views -->
+    
+        <!-- Branch Views -->
+    
+    
+    <definition name="openMedicalProductEntryFormByBranch" extends="base.definition">
+        <put-attribute name="title" value="Medical Product Entry Form"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/branch/activeBranch/activeBranchMenu.jsp"></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/medical/medicalProductForm.jsp"></put-attribute>
+    </definition>
+    
+        <definition name="openGeneralProductEntryFormByBranch" extends="base.definition">
+        <put-attribute name="title" value="General Product Entry Form"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/branch/activeBranch/activeBranchMenu.jsp"></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/general/generalProductForm.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="reOpenMedicalProductEntryFormByBranch" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/medical/medicalProductForm.jsp"></put-attribute>
+    </definition>
+    
+        <definition name="reOpenGeneralProductEntryFormByBranch" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/general/generalProductForm.jsp"></put-attribute>
+    </definition>
+    <!-- End Branch Views -->
+    
+    
+            <!-- Outlet Views -->
+    
+    
+    <definition name="openMedicalProductEntryFormByOutlet" extends="base.definition">
+        <put-attribute name="title" value="Medical Product Entry Form"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/outlet/activeOutlet/activeOutletMenu.jsp"></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/medical/medicalProductForm.jsp"></put-attribute>
+    </definition>
+    
+        <definition name="openGeneralProductEntryFormByOutlet" extends="base.definition">
+        <put-attribute name="title" value="General Product Entry Form"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/outlet/activeOutlet/activeOutletMenu.jsp"></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/general/generalProductForm.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="reOpenMedicalProductEntryFormByOutlet" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/medical/medicalProductForm.jsp"></put-attribute>
+    </definition>
+    
+        <definition name="reOpenGeneralProductEntryFormByOutlet" extends="ajax.defination">
+    	<put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/product/general/generalProductForm.jsp"></put-attribute>
+    </definition>
+    <!-- End Outlet Views -->
+    
+     <!-- **********products bulk upload*************** -->
+	<definition name="productsUploadByOrg" extends="base.definition">
+       
+        <put-attribute name="menu" value="/WEB-INF/views/organization/activeOrganization/activeOrganizationMenu.jsp"></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/productsUpload.jsp"></put-attribute>
+    </definition>
+     
+     <definition name="productsUploadByBranch" extends="base.definition">
+       
+        <put-attribute name="menu" value="/WEB-INF/views/branch/activeBranch/activeBranchMenu.jsp"></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/productsUpload.jsp"></put-attribute>
+    </definition>
+    <definition name="productsUploadByOutlet" extends="base.definition">
+        <put-attribute name="menu" value="/WEB-INF/views/outlet/activeOutlet/activeOutletMenu.jsp"></put-attribute>
+    	<put-attribute name="body" value="/WEB-INF/views/product/productsUpload.jsp"></put-attribute>
+    </definition>
+   
+    </tiles-definitions>

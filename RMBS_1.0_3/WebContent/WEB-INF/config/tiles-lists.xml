@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+    <definition name="OrganizationsList" extends="base.definition">
+       <put-attribute name="title" value="Owners List"></put-attribute>
+       <put-attribute name="menu" value="/WEB-INF/views/organization/activeOrganization/activeOrganizationMenu.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/organization/organizationsList.jsp"></put-attribute>
+        
+    </definition>
+    <definition name="roleThreeUsersList" extends="base.definition">
+       <put-attribute name="title" value="Owners List"></put-attribute>
+       <put-attribute name="menu" value="/WEB-INF/views/organization/activeOrganization/activeOrganizationMenu.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/branch/branchesList.jsp"></put-attribute>
+        
+    </definition>
+    <definition name="outletsList" extends="base.definition">
+       <put-attribute name="title" value="Branch Outlets"></put-attribute>
+       <put-attribute name="menu" value="/WEB-INF/views/branch/activeBranch/activeBranchMenu.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/outlet/outletsList.jsp"></put-attribute>
+        
+    </definition>
+ <definition name="accountRequetsbyOwner" extends="ajax.defination">
+      <put-attribute name="title" value="Users Requests"></put-attribute>
+       <put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/organization/organizationsList.jsp"></put-attribute>
+    </definition>
+     <definition name="accountRequetsByBranch" extends="ajax.defination">
+       <put-attribute name="title" value="Branches Requests"></put-attribute>
+       <put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/branch/branchesList.jsp"></put-attribute>
+        
+    </definition>
+         <definition name="accountRequetsByOutlet" extends="ajax.defination">
+       <put-attribute name="title" value="Outlets Requests"></put-attribute>
+       <put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/outlet/outletsList.jsp"></put-attribute>
+        
+    </definition>
+</tiles-definitions>

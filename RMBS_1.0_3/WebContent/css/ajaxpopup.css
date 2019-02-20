@@ -1,0 +1,146 @@
+#information div{
+	display: inline-block;
+}
+#backgroundPopup { 
+	z-index:1;
+	position: fixed;
+	display:none;
+	height:100%;
+	width:100%;
+	background: grey;	
+	top:0px;  
+	left:0px;
+}
+#toPopup {
+	/*font-family: "lucida grande",tahoma,verdana,arial,sans-serif;*/
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid black ;
+    border-radius: 3px 3px 3px 3px;
+   /* color: #333333;
+   font-size: 14px;
+   */
+    display: none;
+	
+    
+   
+    margin-left: 40%;
+    position: absolute;
+   
+   
+    
+    z-index: 2;
+}
+
+div.loader {
+    background: url("../css/images/popup/white.gif") no-repeat scroll 0 0 transparent;
+    height: 60px;
+    width: 60px;
+	display: none;
+	z-index: 9999;
+	top: 40%;
+	left: 50%;
+	position: absolute;
+	margin-left: -10px;
+}
+div.close {
+    background: url("../css/images/popup/closebox.png") no-repeat scroll 0 0 transparent;
+  /* background-size: 50px 50px;*/
+    cursor: pointer;
+    float: right;
+  height: 30px;
+   width: 30px;
+    left: 18px;
+    top:-20px;
+    position: relative;
+    
+}
+span.ecs_tooltip {
+    background: none repeat scroll 0 0 green;
+    border-radius: 2px 2px 2px 2px;
+    color: #FFFFFF;
+    display: none;
+    font-size: 11px;
+    height: 16px;
+    opacity: 0.7;
+    padding: 4px 3px 2px 5px;
+    position: absolute;
+    right: -90px;
+    text-align: center;
+    top: -45px;
+    width: 93px;
+}
+span.arrow {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid green;
+    display: block;
+    height: 1px;
+    left: 4px;
+    position: relative;
+    top: 3px;
+    width: 1px;
+}
+div.add {
+    background-color: #9B9B9B;
+    text-align: center;
+    
+   
+    font-weight: bold;
+    margin-top: 40%;
+    cursor: pointer;
+    float: right;
+    padding-right: -5px;
+    height: 20px;
+    left: 15px;
+    position: relative;
+    width: 100px;
+}
+span.action_tooltip {
+    background: none repeat scroll 0 0 green;
+    border-radius: 2px 2px 2px 2px;
+    color: #FFFFFF;
+    display: none;
+    font-size: 13px;
+    
+    width:150px;
+    opacity: 0.7;
+    padding: 4px 3px 2px 5px;
+    position: absolute;
+    right: -110px;
+    text-align: center;
+    bottom: 43px;
+   
+}
+span.arrow1 {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid green;
+    display: block;
+    height: 1px;
+    left: 4px;
+    position: relative;
+    top: 10px;
+    width: 1px;
+}
+
+div#popup_content {
+    margin: 4px 7px;
+}
+ @media only screen and (max-width: 450px) {
+	#toPopup {
+	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 7px solid lightblue ;
+    border-radius: 3px 3px 3px 3px;
+    color: #333333;
+    display: none;
+	font-size: 10px;
+   left:0px;
+    margin-left: 0px;
+    position: absolute;
+    
+    width: 50%;
+    
+    z-index: 2;
+}
+}

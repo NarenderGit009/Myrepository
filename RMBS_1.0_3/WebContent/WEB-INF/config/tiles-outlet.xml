@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+     <definition name="outletLoginSucces" extends="base.definition">
+        <put-attribute name="title" value="Outlet Dashboard"></put-attribute>
+        <put-attribute name="notificatonContent" value="/WEB-INF/views/notifications/latestNotification.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/outlet/activeOutlet/activeOutlet.jsp"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/outlet/activeOutlet/activeOutletMenu.jsp"></put-attribute>
+    </definition>
+
+     <definition name="outLetInactiveLogin" extends="base.definition">
+        <put-attribute name="title" value="Inactive Outlet Dashboard"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/outlet/inactiveOutlet/inactiveOutlet.jsp"></put-attribute>
+        <put-attribute name="menu" value="/WEB-INF/views/outlet/inactiveOutlet/inactiveOutletMenu.jsp"></put-attribute>
+    </definition> 
+
+    <definition name="openOutletRegisterForm" extends="base.definition">
+       <put-attribute name="title" value="Outlet Registration"></put-attribute>
+       <put-attribute name="menu" value="/WEB-INF/views/branch/activeBranch/activeBranchMenu.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/outlet/registerOutlet.jsp"></put-attribute>
+    </definition>
+      
+    <definition name="reOpenOutletRegisterForm" extends="ajax.defination">
+      <put-attribute name="menu" value=""></put-attribute>
+      <put-attribute name="body" value="/WEB-INF/views/outlet/registerOutlet.jsp"></put-attribute>
+    </definition>
+    
+    
+    <definition name="outletsList" extends="base.definition">
+       <put-attribute name="title" value="Branch Outlets"></put-attribute>
+       <put-attribute name="menu" value="/WEB-INF/views/branch/activeBranch/activeBranchMenu.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/outlet/outletsList.jsp"></put-attribute>
+        
+    </definition>
+    
+            <definition name="accountRequetsByOutlet" extends="ajax.defination">
+       <put-attribute name="title" value="Outlets Requests"></put-attribute>
+       <put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/outlet/outletsList.jsp"></put-attribute>
+        
+    </definition>
+</tiles-definitions>

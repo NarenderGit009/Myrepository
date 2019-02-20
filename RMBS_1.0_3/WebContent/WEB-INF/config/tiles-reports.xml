@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<!-- purchase reports -->
+	<definition name="openPurchaseReportForm" extends="base.definition">
+		<put-attribute name="menu"
+			value="/WEB-INF/views/organization/activeOrganization/activeOrganizationMenu.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/reports/purchase/purchaseReport.jsp"></put-attribute>
+	</definition>
+
+	<!--  <definition name="openPurchaseReportFormByOrg" extends="base.definition">
+		<put-attribute name="menu"
+			value="/WEB-INF/views/organization/activeOrganization/activeOrganizationMenu.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/reports/purchase/purchaseReport.jsp"></put-attribute>
+	</definition> -->
+	
+	<definition name="purchaseOrdersView" extends="ajax.defination">
+		<put-attribute name="menu" value=""></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/reports/purchase/purchaseReportsData.jsp"></put-attribute>
+	</definition> 
+</tiles-definitions>
