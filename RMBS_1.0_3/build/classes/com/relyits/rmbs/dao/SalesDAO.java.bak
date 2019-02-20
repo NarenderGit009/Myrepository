@@ -1,0 +1,32 @@
+package com.relyits.rmbs.dao;
+
+import java.util.List;
+
+import com.relyits.rmbs.model.sales.SalesLineItemsModel;
+import com.relyits.rmbs.model.sales.SalesOrderModel;
+
+
+public interface SalesDAO {
+	
+	public SalesLineItemsModel createSalesOrder(SalesLineItemsModel salesLineItemsModel);
+	
+	public SalesOrderModel getSalesOrder(SalesOrderModel salesOrderModel);
+	
+	public SalesLineItemsModel createSalesOrderLineItems(SalesLineItemsModel salesLineItemsModel);
+	
+	public List<SalesOrderModel> SalesOrderListByOrganization(SalesOrderModel SalesOrderModel);
+	
+	public List<SalesOrderModel> SalesOrderListByBranch(SalesOrderModel SalesOrderModel);
+
+	public List<SalesOrderModel> SalesOrderListByOutlet(SalesOrderModel SalesOrderModel);
+	
+	public List<SalesLineItemsModel> getSalesLineItems(SalesLineItemsModel SalesLineItemsModel);
+	
+	public List<SalesLineItemsModel> SalesLineItemsListByOrganization(SalesLineItemsModel SalesLineItemsModel);
+	
+	public List<SalesLineItemsModel> SalesLineItemsListByBranch(SalesLineItemsModel SalesLineItemsModel);
+
+	public List<SalesLineItemsModel> SalesLineItemsListByOutlet(SalesLineItemsModel SalesLineItemsModel);
+	
+	public List<SalesLineItemsModel> getSalesLineItemsModelsBySalesOrderModel(SalesOrderModel SalesOrderModel) ;
+}
