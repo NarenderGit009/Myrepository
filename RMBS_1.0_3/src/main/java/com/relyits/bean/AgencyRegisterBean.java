@@ -8,7 +8,7 @@ import java.sql.Date;
  */
 public class AgencyRegisterBean{
 	private Integer id;
-	private String agencyName1;
+	private String agencyName;
 	private String address;
 	private Long phno;
 	private String cstNo;
