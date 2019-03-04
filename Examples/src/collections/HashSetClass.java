@@ -8,10 +8,11 @@ public class HashSetClass {
 	public static void main(String[] args) {
 		
 		
-		Set<String> set=new HashSet<>();
+		Set<String> set=new HashSet<>();//it's not synchronized, doesn't allow duplicates, allows null values.
 		
 		set.add("Anny");
 		set.add("Narender");
+		set.add(null);
 		set.add(null);
 		set.add("Narender");
 		

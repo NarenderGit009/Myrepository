@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report7" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8368ad1a-e1e1-44a0-bca8-f1d031da3adc">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from rmbs201;]]>
+	</queryString>
+	<field name="code" class="java.lang.String"/>
+	<field name="createdDate" class="java.sql.Date"/>
+	<field name="mFCompanay" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="schDrug" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="57" splitType="Stretch">
+			<staticText>
+				<reportElement x="196" y="11" width="165" height="20" uuid="12294d4b-6522-4eaf-b20c-4366b6f89b03"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Master Products Reports]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-20" y="46" width="593" height="1" uuid="727699e0-7c84-4989-a2e3-6f117189f54b"/>
+			</line>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="0" y="26" width="100" height="20" uuid="79f06988-33f5-4c49-ba99-3f9daf7eb5f8"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="b36a4093-9136-4e70-acd4-705eae9fcedd"/>
+				<textElement textAlignment="Justified">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prodcud Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="127" y="0" width="100" height="20" uuid="129f9afa-d60a-42bb-92f3-b6d994a0316b"/>
+				<textElement textAlignment="Justified">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Product Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="261" y="2" width="100" height="20" uuid="8e0273e9-8151-4444-bca3-c5a6165c4174"/>
+				<textElement textAlignment="Justified">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MFC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="385" y="0" width="63" height="20" uuid="d35df13a-021a-4b2e-b02f-32dacb49d0f0"/>
+				<textElement textAlignment="Justified">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SCH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="0" width="87" height="20" uuid="57ddf331-d1a0-4b65-aadd-6748d73ac624"/>
+				<textElement textAlignment="Justified">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CreatedDate]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="143be7d6-45e6-485f-80ae-042985ddc010"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="127" y="0" width="100" height="20" uuid="e7de91bb-e698-4f82-adc3-2c8556d8f999"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="261" y="0" width="100" height="20" uuid="d8013927-bf1f-4974-b5f9-13437f3af941"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{mFCompanay}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="385" y="0" width="63" height="20" uuid="92c5e6f9-c3fb-48c6-915c-23670e0dca9b"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{schDrug}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="87" height="20" uuid="db6503b8-b4f6-42f9-8d49-d1c25827743f"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{createdDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="427" y="21" width="80" height="20" uuid="5c61afc6-2b8a-4ef3-91fc-4a2c17bc5148"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="507" y="21" width="40" height="20" uuid="dafe1586-ad62-4dd8-b680-2c12e7f333e5"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="0" y="21" width="100" height="20" uuid="5d6bbdd4-82fd-427d-a5b7-08c2abaf6cc6"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
